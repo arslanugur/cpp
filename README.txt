@@ -4,7 +4,7 @@ Basic Concepts
 01. Intro
 2.2 Practice: Your First Program
 02. Headers and namespaces
-4.1 Lesson: New Lines
+03. New Lines
 4.2 Practice: New Lines
 5.1 Lesson: Comments
 5.2 Practice: C++ Is Cool
