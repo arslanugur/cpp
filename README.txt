@@ -1,6 +1,6 @@
-# cpp
+# cpp (fixing...)
 
-Basic Concepts
+    Basic Concepts
 01. Intro
     Practice: Your First Program
 02. Headers and namespaces
@@ -12,22 +12,21 @@ Basic Concepts
     Practice: Sharing Is Caring
 05. Working with Variables
     Practice: Taking Inputs
-8.1 Lesson: More on Variables
-9.1 Lesson: Basic Arithmetic
-9.2 Practice: Room Renovation
-9.3 Practice: Your Culinary Masterpiece
-10.1 Lesson: Assignment and Increment Operators
-10.2 Practice: Robot Copywriter
-10.3 Practice: Bank Account Balance
-11.1 Lesson: Module 1 Quiz
-12 Code project: Transportation
+06. Basic Arithmetic 
+    Practice: Room Renovation
+    Practice: Your Culinary Masterpiece
+07. Assignment and Increment Operators
+    Practice: Robot Copywriter
+    Practice: Bank Account Balance
+08. Module 1 Quiz
+09. Code project: Transportation
 
 Conditionals and Loops
-13.1 Lesson: The if Statement
-13.2 Practice: Pool Entrance
-13.3 Practice: Got enough RAM?
-14.1 Lesson: The else Statement
-14.2 Practice: Smash The Exam
+10. The if Statement
+    Practice: Pool Entrance
+    Practice: Got enough RAM?
+11. The else Statement
+    Practice: Smash The Exam
 14.3 Practice: Even Or Odd
 15.1 Lesson: The while Loop
 15.2 Practice: Multiples of 3
