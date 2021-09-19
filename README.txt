@@ -3,7 +3,7 @@
 Basic Concepts
 01. Intro
 2.2 Practice: Your First Program
-3.1 Lesson: Headers and namespaces
+02. Headers and namespaces
 4.1 Lesson: New Lines
 4.2 Practice: New Lines
 5.1 Lesson: Comments
