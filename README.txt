@@ -2,16 +2,16 @@
 
 Basic Concepts
 01. Intro
-2.2 Practice: Your First Program
+    Practice: Your First Program
 02. Headers and namespaces
 03. New Lines
-4.2 Practice: New Lines
-5.2 Practice: C++ Is Cool
-5.3 Practice: To Comment or Not To Comment
+    Practice: New Lines
+    Practice: C++ Is Cool
+    Practice: To Comment or Not To Comment
 04. Variables
-6.2 Practice: Sharing Is Caring
-7.1 Lesson: Working with Variables
-7.2 Practice: Taking Inputs
+    Practice: Sharing Is Caring
+05. Working with Variables
+    Practice: Taking Inputs
 8.1 Lesson: More on Variables
 9.1 Lesson: Basic Arithmetic
 9.2 Practice: Room Renovation
