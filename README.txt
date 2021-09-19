@@ -6,10 +6,9 @@ Basic Concepts
 02. Headers and namespaces
 03. New Lines
 4.2 Practice: New Lines
-5.1 Lesson: Comments
 5.2 Practice: C++ Is Cool
 5.3 Practice: To Comment or Not To Comment
-6.1 Lesson: Variables
+04. Variables
 6.2 Practice: Sharing Is Caring
 7.1 Lesson: Working with Variables
 7.2 Practice: Taking Inputs
