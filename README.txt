@@ -1,8 +1,7 @@
 # cpp
 
 Basic Concepts
-1.1 Lesson: Welcome to C++
-2.1 Lesson: Your First C++ Program
+01. Intro
 2.2 Practice: Your First Program
 3.1 Lesson: Headers and namespaces
 4.1 Lesson: New Lines
