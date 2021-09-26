@@ -27,11 +27,11 @@ Conditionals and Loops
     Practice: Got enough RAM?
 11. The else Statement
     Practice: Smash The Exam
-14.3 Practice: Even Or Odd
-15.1 Lesson: The while Loop
-15.2 Practice: Multiples of 3
-16.1 Lesson: Using a while Loop
-16.2 Practice: Countdown
+    Practice: Even Or Odd
+12. The while Loop
+    Practice: Multiples of 3
+13. Lesson: Using a while Loop
+    Practice: Countdown
 17.1 Lesson: The for Loop
 17.2 Practice: Bon Voyage!
 18.1 Lesson: The do... while Loop
