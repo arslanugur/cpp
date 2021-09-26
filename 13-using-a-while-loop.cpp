@@ -94,6 +94,26 @@ cout << "Sum: " << total << endl;
         remember that the <= is for (smaller than or equal to), 
         that's why the while can be executed 6 times.*/
 
+      //Example
+#include <iostream>
+using namespace std;
 
-      
+int main() {
+
+    int k = 1;
+    int password;
+    cin >> password ;
+    while (k < 3){
+    cout << k << endl ;
+    k++;
+    }
+    if (password == 1111){
+    cout << "Welcome To My Program" << endl ;
+    }
+    else {
+    cout << "Try Again" ;
+    }
+    return 0;
+}
+
 
