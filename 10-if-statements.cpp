@@ -65,10 +65,10 @@ Operator |Description              |Example
 >=       |greater than or equal to |7>=4 True
 <=       |less than or equal to    |7<=4 False
 ==       |equal to                 |7==4 False
-!=       |not equal to             |7!=4 True */
+!=       |not equal to             |7!=4 True
 
 = (equals) 
-== (check to see if it's equal)
+== (check to see if it's equal)*/
                
       //Example:
 #include <iostream>
