@@ -30,14 +30,14 @@ Conditionals and Loops
     Practice: Even Or Odd
 12. The while Loop
     Practice: Multiples of 3
-13. Lesson: Using a while Loop
+13. Using a while Loop
     Practice: Countdown
-17.1 Lesson: The for Loop
-17.2 Practice: Bon Voyage!
-18.1 Lesson: The do... while Loop
-18.2 Practice: Who Doesn't Love A Discount?
-19.1 Lesson: The switch Statement
-19.2 Practice: Cup O' Joe
+14. The for Loop
+    Practice: Bon Voyage!
+15. The do... while Loop
+    Practice: Who Doesn't Love A Discount?
+16. The switch Statement
+    Practice: Cup O' Joe
 20.1 Lesson: Logical Operators
 20.2 Practice: Rock the Space!
 21.1 Lesson: Module 2 Quiz
