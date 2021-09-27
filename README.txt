@@ -38,130 +38,130 @@ Conditionals and Loops
     Practice: Who Doesn't Love A Discount?
 16. The switch Statement
     Practice: Cup O' Joe
-20.1 Lesson: Logical Operators
-20.2 Practice: Rock the Space!
-21.1 Lesson: Module 2 Quiz
-22 Code project: Countdown
+17. Logical Operators
+    Practice: Rock the Space!
+18. Module 2 Quiz
+19. Code project: Countdown
 
 
 Data Types, Arrays, Pointers
-23.1 Lesson: Introduction to Data Types
-23.2 Practice: Once Upon A Time In America
-24.1 Lesson : int, float, double
-24.2 Practice: Fever
-25.1 Lesson: string, char, bool
-26.1 Lesson: Variable Naming Rules
-27.1 Lesson: Arrays
-27.2 Practice: First, fifth and last
-28.1 Lesson: Using Arrays in Loops
-29.1 Lesson: Arrays in Calculations
-29.2 Practice: What's My Discount?
-30.1 Lesson: Multi-Dimensional Arrays
-30.2 Practice: Square Matrix
-30.3 Practice: Movie Tickets
-31.1 Lesson: Introduction to Pointers
-32.1 Lesson: More on Pointers
-33.1 Lesson: Dynamic Memory
-33.2 Practice: Find The Largest Element
-34.1 Lesson: The sizeof() Operator
-34.2 Practice: How Many Employees?
-35.1 Lesson: Module 3 Quiz
-36 Code project: Ticket Office
+20. Introduction to Data Types
+    Practice: Once Upon A Time In America
+21. int, float, double
+    Practice: Fever
+22. string, char, bool
+23. Variable Naming Rules
+24. Arrays
+    Practice: First, fifth and last
+25. Using Arrays in Loops
+26. Arrays in Calculations
+    Practice: What's My Discount?
+27. Multi-Dimensional Arrays
+    Practice: Square Matrix
+    Practice: Movie Tickets
+28. Introduction to Pointers
+29. More on Pointers
+30. Dynamic Memory
+    Practice: Find The Largest Element
+31. The sizeof() Operator
+    Practice: How Many Employees?
+32. Module 3 Quiz
+33. Code project: Ticket Office
 
 
 Functions
-37.1 Lesson: Introduction to Functions
-37.2 Practice: Keep Learning
-38.1 Lesson: Function Parameters
-38.2 Practice: Hours To Minutes
-39.1 Lesson: Functions with Multiple Parameters
-39.2 Practice: Roll The Dice!
-40.1 Lesson: The rand() Function
-40.2 Practice: Setting Your PIN
-41.1 Lesson: Default Arguments
-41.2 Practice: Placing Your Order
-42.1 Lesson: Function Overloading
-42.2 Practice: Calculating Sums
-43.1 Lesson: Recursion
-43.2 Practice: Battle Of The Cakes
-44.1 Lesson: Passing Arrays to Functions
-44.2 Practice: Who's The Lucky Winner?
-45.1 Lesson: Pass by Reference with Pointers
-45.2 Practice: More Megabytes Please!
-46.1 Lesson: Module 4 Quiz
-47 Code project: Palindrome Numbers
+34. Introduction to Functions
+    Practice: Keep Learning
+35. Function Parameters
+    Practice: Hours To Minutes
+36. Functions with Multiple Parameters
+    Practice: Roll The Dice!
+39. The rand() Function
+    Practice: Setting Your PIN
+40. Default Arguments
+41. Practice: Placing Your Order
+42. Function Overloading
+43. Practice: Calculating Sums
+44. Recursion
+    Practice: Battle Of The Cakes
+45. Passing Arrays to Functions
+    Practice: Who's The Lucky Winner?
+46. Pass by Reference with Pointers
+    Practice: More Megabytes Please!
+47. Module 4 Quiz
+48. Code project: Palindrome Numbers
 
 Classes and Objects
-48.1 Lesson: What is an Object
-49.1 Lesson: What is a Class
-50.1 Lesson: Example of a Class
-50.2 Practice: Chirp Chirp
-51.1 Lesson: Abstraction
-52.1 Lesson: Encapsulation
-53.1 Lesson: Example of Encapsulation
-53.2 Practice: How Much Vroom?
-54.1 Lesson: Constructors
-54.2 Practice: The Ninth Wave
-55.1 Lesson: Module 5 Quiz
-56 Code project: Queue Management Part 1
+49. What is an Object
+50. What is a Class
+51. Example of a Class
+    Practice: Chirp Chirp
+52. Abstraction
+53. Encapsulation
+54. Example of Encapsulation
+    Practice: How Much Vroom?
+55. Constructors
+    Practice: The Ninth Wave
+56. Module 5 Quiz
+57. Code project: Queue Management Part 1
 
 
 More On Classes
-57.1 Lesson: Separate Files for Classes
-58.1 Lesson: Destructors
-58.2 Practice: Player Destructor
-59.1 Lesson: Selection Operator
-59.2 Practice: Charge!
-60.1 Lesson: Const Objects
-60.2 Practice: Creating Classes
-61.1 Lesson: Member Initializers
-61.2 Practice: Sorting By Size
-62.1 Lesson: Composition, Part 1
-63.1 Lesson: Composition, Part 2
-63.2 Practice: Fast Engine
-64.1 Lesson: The Friend Keyword
-64.2 Practice: Find The Coordinates
-65.1 Lesson: The This Keyword
-66.1 Lesson: Operator Overloading
-66.2 Practice: Tracking Your Bank Account
-67.1 Lesson: Module 6 Quiz
-68 Code project: Queue Management Part 2
+58. Separate Files for Classes
+59. Destructors
+    Practice: Player Destructor
+60. Selection Operator
+    Practice: Charge!
+61. Const Objects
+    Practice: Creating Classes
+62. Member Initializers
+    Practice: Sorting By Size
+63. Composition, Part 1
+64. Composition, Part 2
+    Practice: Fast Engine
+65. The Friend Keyword
+    Practice: Find The Coordinates
+66. The This Keyword
+67. Operator Overloading
+    Practice: Tracking Your Bank Account
+68. Module 6 Quiz
+69. Code project: Queue Management Part 2
 
 Inheritance & Polymorphism
-69.1 Lesson: Inheritance
-69.2 Practice: Doodling!
-70.1 Lesson: Protected Members
-70.2 Practice: Inherited Fruit
-71.1 Lesson: Derived Class Constructor & Destructor
-71.2 Practice: Game Over!
-72.1 Lesson: Polymorphism
-72.2 Practice: Another Cup Of Coffee
-73.1 Lesson: Virtual Functions
-73.2 Practice: Roar!
-74.1 Lesson: Abstract Classes
-74.2 Practice: Going For A Ride
-75.1 Lesson: Module 7 Quiz
-76 Code project: Queue Management Part 3
+70. Inheritance
+    Practice: Doodling!
+71. Protected Members
+    Practice: Inherited Fruit
+72. Derived Class Constructor & Destructor
+    Practice: Game Over!
+73. Polymorphism
+    Practice: Another Cup Of Coffee
+74. Virtual Functions
+    Practice: Roar!
+75. Abstract Classes
+    Practice: Going For A Ride
+76. Module 7 Quiz
+77. Code project: Queue Management Part 3
 
 
 Templates, Exceptions, and Files
-77.1 Lesson: Function Templates
-77.2 Practice: Functions!
-78.1 Lesson: Function Templates with Multiple Parameters
-78.2 Practice: Parameter Dance Card
-79.1 Lesson: Class Templates
-79.2 Practice: Your Queue!
-80.1 Lesson: Template Specialization
-80.2 Practice: Template Specialist
-81.1 Lesson: Exceptions
-81.2 Practice: String, Input, Length, Status
-82.1 Lesson: More on Exceptions
-82.2 Practice: Exception!
-83.1 Lesson: Working with Files
-84.1 Lesson: More on Files
-85.1 Lesson: Module 8 Quiz
-86 Code project: Queue Management Part 4
+78. Function Templates
+    Practice: Functions!
+79. Function Templates with Multiple Parameters
+    Practice: Parameter Dance Card
+80. Class Templates
+    Practice: Your Queue!
+81. Template Specialization
+    Practice: Template Specialist
+82. Exceptions
+    Practice: String, Input, Length, Status
+83. More on Exceptions
+    Practice: Exception!
+84. Working with Files
+85. More on Files
+86. Module 8 Quiz
+87. Code project: Queue Management Part 4
 
 Challenges
-87.1 Lesson: Challenge 1
-88.1 Lesson: Challenge 2
+88. Challenge 1
+89. Challenge 2
