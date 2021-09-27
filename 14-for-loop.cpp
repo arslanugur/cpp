@@ -58,6 +58,70 @@ int main()
 
       //When a increments to 10, the condition evaluates to false, and the loop stops.
 
+      //To print x's values to the screen 10 times:
+for (int x = 1; x <= 10; x++) {
+  cout << x << endl;
+}
+
+
+      //It's possible to change the increment statement.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    for (int a = 0; a < 50; a+=10) {
+        cout << a << endl;
+    }
+
+    return 0;
+} //output: 0 10 20 30 40
+
+      //You can also use decrement in the statement.
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    for (int a = 10; a >= 0; a -= 3) {
+        cout << a << endl;
+    }
+
+    return 0;
+}
+      //output: 10 7 4 1
+      //When using the for loop, don't forget the semicolon after the init and condition statements.
+
+      //If we don't give it a condition. for example: for (int x=1;;x++) { cout<<"Hello"<<endl; } //Hello will be printed infinitely
+
+
+      //to print EVEN (multiples of 2) values from 0 to 20 using a for loop:
+for (int x = 0; x <= 20; x += 2) {
+  cout << x << endl;
+}
+
+      //Example
+#include <iostream>
+using namespace std;
+/*For question*/
+int main() {
+
+int arr[] ={1,2,3,4,5,6}; //declare array
+
+// for (data_type var : array_variable){}
+for (int a : arr){ 
+cout << a << endl;
+}
+return 0;
+}
+/*output:
+    1
+    2
+    3
+    4
+    5
+    6*/
+
 
       //A program that recieves a number from user and prints out all prime numbers from 1 to that number: 
 #include <iostream> 
@@ -130,3 +194,24 @@ cout<<"Pyramid temple number  < 10:\n";
 }
 
 
+      //Inverted Triangle (pyramid Terbalik)
+#include <iostream>
+using namespace std;
+
+int main() {
+// Do you have inverted triangle body shape? 
+    int numrows,i,d, j; 
+    cout<<"Number of rows less than 6: "; 
+    numrows=5;
+    cout<<"\n\n";
+    for(i=numrows; i>=1; --i) { 
+        for(d=0; d<numrows-i; ++d) 
+           cout<<"\t"; 
+        for(j=i; j<=2*i-1; ++j) {
+           cout<<"\t"<<i<<"\t"; 
+        }
+        cout<<endl;
+    
+    }
+    return 0;
+}
