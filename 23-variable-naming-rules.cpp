@@ -28,9 +28,6 @@ Variable naming conditions in C++ are as follows :
 #3. It should not have any white spaces .
 
 #4. Keywords cannot be used as variable name.
-
-assignment link:
-https://www.sololearn.com/learn/5164/?ref=app
 */
 
 #include<iostream>
@@ -59,7 +56,7 @@ is_val+=SC(vName);
 is_val+=WS(vName);
 is_val+=KW(vName);
  
-cout<<"*********************************\n\n";
+cout<<"***\n\n";
 if(is_val==4)   
     cout<<vName<<" is a valid variable name because it satisfies all conditions of valid variable name ";
 else
@@ -150,12 +147,59 @@ for(int i=0;i<66;i++)
 
 
 CASE-SENSITIVITY
-      //C++ is case-sensitive, which means that an identifier written in uppercase is not equivalent to another one with the same name in lowercase.
+      //C++ is case-sensitive, 
+      //which means that an identifier written in uppercase is not equivalent to another one with the same name in lowercase.
       //For example, myvariable is not the same as MYVARIABLE and not the same as MyVariable.
       //These are three different variables.
       
+      //Choose variable names that suggest the usage, for example: firstName, lastName.
+
+      //It is important to know that keywords like aoto, double, int, struct etc can't be used as variable names. 
+      //However we are free to use Auto, douBle, INT, StrucT etc because C++ is a case sensitive language
       
-      https://www.sololearn.com/learning/1051/1624/2838/1
+      
+      //Example
+ #include <iostream> 
+ using namespace std; 
+int main() { 
+      int shadow = 1; 
+      int Shadow = 2; 
+      int SHADOW = 3; 
+      int SHAdow = 4; 
+      cout<<shadow<<endl<<Shadow<<endl; 
+      cout<<SHADOW<<endl<<SHAdow; 
+      return 0; 
+} //output: 1 2 3 4
+
+
+
+Variable Naming Rules
+      //C++ keyword (reserved word) cannot be used as variable names.
+      //For example, int, float, double, cout cannot be used as a variable name. 
+
+      //There is no real limit on the length of the variable name (depends on the environment), 
+      //but try to keep your variable names practical and meaningful.
+
+
+      /*All reserved keywords means we can't have these words as variable:
+      auto, break, case, char, const, continue default, do, double, else, enum, extern, 
+      float, for, goto, if, int, long register, return, short, signed, sizeof, static, 
+      struct, switch, typedef, union, unsigned, void volatile, while.*/
       
 
-Choose variable names that suggest the usage, for example: firstName, lastName.
+      //Example
+#include <iostream>
+int main() {
+    int cout = 8; //to use cout as variable name
+    std::cout << cout;
+    return 0;
+}
+ 
+      //Example: to declare an int variable named var3, a double variable named salary, and a bool variable named ab_c14.
+int var3;
+double salary;
+bool ab_c14;
+
+
+      
+      
