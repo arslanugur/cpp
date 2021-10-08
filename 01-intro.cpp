@@ -1,4 +1,4 @@
-Templates
+TEMPLATES
       //A C++ program is a collection of commands or statements.
 
       //Below is a simple program template.
@@ -26,15 +26,15 @@ int main()      //int main() is the entry point of every C++ program
       //cin (read it like see in ) to get an input from user, and cout( see out) to print something on screen. 
       //return 0 tells the main() function to end. in c++ every complete "statement" should end with ; 
 
-First Codes
+FIRST CODES
       //To do that, we will add cout << "Hello world!"; line to our main() function body: 
-#include <iostream>
-using namespace std;
-
+#include <iostream>     //tells compiler to include std input output header file
+using namespace std;    
 int main()
 {
-    cout << "Hello world!";  //cout --> is short for "Console Out"
-    return 0;
+    cout << "Hello world!";   //cout --> is short for "Console Out"
+                              //prints the string on user screen
+    return 0;                 //return the value zero to the OS
 }
       //cout is the stream object used to perform output on the standard output device which is usually the display screen.
       //cout is used in combination with the insertion operator <<. 
