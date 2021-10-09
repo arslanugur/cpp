@@ -1,0 +1,2576 @@
+Matrix Subtraction
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int m, n, c, d, first[10][10], second[10][10], difference[10][10];
+
+cout<<"Enter the number of rows and columns of matrix\n";
+cin>>m>>n;
+cout<<"Enter the elements of first matrix\n";
+
+for (c = 0; c < m; c++)
+for (d = 0 ; d < n; d++)
+cin>>first[c][d];
+
+cout<<"Enter the elements of second matrix\n";
+
+for (c = 0; c < m; c++)
+for (d = 0; d < n; d++)
+cin>>second[c][d];
+
+for (c = 0; c < m; c++)
+for (d = 0; d < n; d++)
+difference[c][d] = first[c][d] - second[c][d];
+/* Subtract Matrices*/
+
+cout<<"difference of entered matrices:-\n";
+
+for (c = 0; c < m; c++)
+{
+for (d = 0; d < n; d++)
+cout<<difference[c][d]<<"\t";
+
+cout<<"\n";
+} return 0; }
+
+
+Output:
+
+Enter the number of rows and columns of matrix                                     
+2                                                                                  
+2                                                                                  
+Enter the elements of first matrix                                                 
+1 1                                                                                
+1 1                                                                                
+Enter the elements of second matrix                                                
+2 2                                                                                
+2 2                                                                                
+difference of entered matrices:-                                                          
+-1       -1                                                                          
+-1       -1 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Matrix Multiplication
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int m, n, p, q, c, d, k, sum = 0;
+int first[10][10], second[10][10], multiply[10][10];
+
+cout<<"Enter the number of rows and columns of first matrix\n";
+cin>>m>>n;
+cout<<"Enter the elements of first matrix\n";
+
+for ( c = 0 ; c < m ; c++ )
+for ( d = 0 ; d < n ; d++ )
+cin<<first[c][d];
+
+cout<<"Enter the number of rows and columns of second matrix\n";
+cin>>p>>q;
+
+if ( n != p )
+cout<<"Matrices with entered orders can't be multiplied with each other.\n";
+else
+{
+cout<<"Enter the elements of second matrix\n";
+
+for ( c = 0 ; c < p ; c++ )
+for ( d = 0 ; d < q ; d++ )
+cin>>second[c][d];
+
+for ( c = 0 ; c < m ; c++ )
+{
+for ( d = 0 ; d < q ; d++ )
+{
+for ( k = 0 ; k < p ; k++ )
+{
+sum = sum + first[c][k]*second[k][d];
+}
+
+multiply[c][d] = sum;
+sum = 0;
+}
+}
+
+cout<<"Product of entered matrices:-\n";
+
+for ( c = 0 ; c < m ; c++ )
+{
+for ( d = 0 ; d < q ; d++ )
+cout<<multiply[c][d]<<"\t";
+
+cout<<"\n";
+}
+}
+
+return 0;
+}
+
+
+Output:
+
+Enter the number of rows and columns of matrix                                     
+2                                                                                  
+2                                                                                  
+Enter the elements of first matrix                                                 
+1 1                                                                                
+1 1                                                                                
+Enter the elements of second matrix                                                
+2 2                                                                                
+2 2                                                                                
+difference of entered matrices:-                                                          
+4      4                                                                          
+4       4 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Transpose Matrix
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int m, n, c, d, matrix[10][10], transpose[10][10];
+cout<<"Enter the number of rows and columns of matrix ";
+cin>>m>>n; cout<<"Enter the elements of matrix \n";
+for( c = 0 ; c < m ; c++ )
+{
+for( d = 0 ; d < n ; d++ )
+{
+cin>>matrix[c][d];
+}
+}
+
+for( c = 0 ; c < m ; c++ )
+{
+for( d = 0 ; d < n ; d++ )
+{
+transpose[d][c] = matrix[c][d];
+/* transpose by interchanging rows and columns */
+}
+}
+
+cout<<"Transpose of entered matrix :-\n";
+for( c = 0 ; c < n ; c++ )
+{
+for( d = 0 ; d < m ; d++ )
+{
+cout<<transpose[c][d]<<"\t";
+}
+cout<<"\n";
+}
+return 0;
+}
+
+
+Output:
+
+Enter the number of rows and columns of matrix 2 2                                 
+Enter the elements of matrix                                                       
+1 2                                                                                
+3 4                                                                                
+Transpose of entered matrix :-                                                     
+1       3                                                                          
+2       4 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Matrix Addition using classes
+
+#include<iostream>
+
+using namespace std;
+
+class Add{
+
+public: void sum(int r, int c){
+
+int m1[r][c], m2[r][c], s[r][c];
+
+cout << "Enter the elements of first 1st matrix: ";
+
+for (int i = 0;i<r;i++ ) {
+
+for (int j = 0;j < c;j++ ) {
+
+cin>>m1[i][j]; }
+
+}
+
+cout << "Enter the elements of second 2nd matrix: ";
+
+for (int i = 0;i<r;i++ ) {
+
+for (int j = 0;j<c;j++ ) {
+
+cin>>m2[i][j]; }
+
+}
+
+cout<<"Output: ";
+
+for (int i = 0;i<r;i++ ) {
+
+for (int j = 0;j<c;j++ ) {
+
+s[i][j]=m1[i][j]+m2[i][j];
+
+cout<<s[i][j]<<" ";
+
+} } }
+
+};
+
+int main(){
+
+int row, col;
+
+cout<<"Enter the number of rows(should be >1 and <10): ";
+
+cin>>row;
+
+cout<<"Enter the number of column(should be >1 and <10): ";
+
+cin>>col;
+
+Add obj;
+
+obj.sum(row, col);
+
+return 0;
+
+}
+
+
+
+Output:
+
+Enter the number of rows(should be >1 and <10): 2
+
+Enter the number of column(should be >1 and <10): 3
+
+Enter the elements of first 1st matrix:
+  1 1 1
+  1 1 1
+
+Enter the elements of second 2nd matrix: 
+5 5 5 
+5 5 5
+
+output:6 6 6 
+6 6 6
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Matrix Multiplication using classes
+
+#include<iostream>
+
+#include<conio.h> 
+
+using namespace std;
+
+class matrix {
+
+int a[10][10];
+
+int m,n;
+
+public:
+
+void input();
+
+void output();
+
+void multiply(matrix,matrix);
+
+};
+
+void matrix::input() {
+
+cout<<"Enter the number of row : ";
+
+cin>>m;
+
+cout<<"Enter the number of column : ";
+
+cin>>n;
+
+cout<<"Matrix"<<"\n";
+
+for(int i=0;i<m;i++) {
+
+for(int j=0;j<n;j++) {
+
+cin>>a[i][j];
+
+}   }    }
+
+void matrix ::
+
+output() {
+
+for(int i=0;i<m;i++) {
+
+cout<<"\n";
+
+for(int j=0;j<n;j++) {
+
+cout<<a[i][j]<<"\t";
+
+}   }          }
+
+void matrix ::
+
+multiply(matrix m1, matrix m2) {
+
+if(m1.n!=m2.m) {
+
+cout<<"matrix multiplication is not possible";
+
+} else { for(int i=0;i<m1.m;i++) {
+
+for(int j=0;j<m2.n;j++) {
+
+a[i][j]=0; for(int k=0;k<m1.n;k++) {
+
+a[i][j]=a[i][j] +( m1.a[i][k]*m2.a[k][j]);
+
+m=m1.m; n=m2.n;
+
+} } } } }
+
+int main() {
+
+matrix m1,m2,m3;
+
+m1.input();
+
+m2.input();
+
+m3.multiply(m1,m2);
+
+m3.output();
+
+}
+
+
+
+Output:
+
+Enter the number of row : 2                                                        
+Enter the number of column : 2                                                     
+Matrix                                                                             
+3 3                                                                                
+3                                                                                  
+3                                                                                  
+Enter the number of row : 2                                                        
+Enter the number of column : 2                                                     
+Matrix                                                                             
+1 1                                                                                
+1 1                                                                                
+                                                                                   
+6       6                                                                          
+6       6  
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Complex number using classes
+
+/* * C++ Program to Implement Complex Numbers using Classes */
+
+#include <iostream>
+
+using namespace std;
+
+class Complex {
+
+private: int real;
+
+int imag;
+
+public:
+
+Complex(int r = 0, int i = 0):
+
+real(r),
+
+imag(i) {};
+
+void setComplex(void) {
+
+cout << "Enter the real and imaginary parts : ";
+
+cin >> this->real;
+
+cin >> this->imag;
+
+}
+
+Complex add(const Complex& c) {
+
+Complex comp;
+
+comp.real = this->real + c.real;
+
+comp.imag = this->imag + c.imag;
+
+return comp;
+
+}
+
+Complex subtract(const Complex& c) {
+
+Complex comp;
+
+comp.real = this->real - c.real;
+
+comp.imag = this->imag - c.imag;
+
+return comp; }
+
+void printComplex(void) {
+
+cout << "Real : " << this->real << endl << "Imaginary : " << this->imag << endl;
+
+}   };
+
+int main() {
+
+Complex a, b, c, d;
+
+cout << "Setting first complex number " << endl;
+
+a.setComplex();
+
+cout << "Setting second complex number " << endl;
+
+b.setComplex();
+
+/* Adding two complex numbers */
+
+cout << "Addition of a and b : " << endl;
+
+c = a.add(b); c.printComplex();
+
+/* Subtracting two complex numbers */
+
+cout << "Subtraction of a and b : " << endl;
+
+d = a.subtract(b); d.printComplex();
+
+}
+
+
+
+Output:
+
+Setting first complex number
+
+Enter the real and imaginary parts : 1 1
+
+Setting second complex number
+
+Enter the real and imaginary parts : 2 2
+
+Addition of a and b : Real : 3 Imaginary : 3
+
+Subtraction of a and b : Real : -1 Imaginary : -1
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Linear Search
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int array[100], search, c, n;
+
+cout<<"Enter the number of elements in array\n";
+cin>>n;
+
+cout<<"Enter"<<n<<"integer(s)\n";
+
+for (c = 0; c < n; c++)
+cin>>array[c];
+
+cout<<"Enter the number to search\n";
+cin>>search;
+
+/* We keep on comparing each element with the element to search until the desired element is found or list ends */
+for (c = 0; c < n; c++)
+{
+if (array[c] == search){
+/* if required element found*/
+cout<<search<<" is present at location"<<c+1<<"\n";
+break;
+}
+}
+if (c == n)
+cout<<search<< "is not present in array.\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter the number of elements in array                                              
+4                                                                                  
+Enter 4 integer(s)                                                                   
+3 6 7 8                                                                            
+Enter the number to search                                                         
+4                                                                                  
+4is not present in array.
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Binary search
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int c, first, last, middle, n, search, array[100];
+
+cout<<"Enter number of elements\n";
+cin>>n;
+
+cout<<"Enter"<< n <<"integers\n";
+
+for ( c = 0 ; c < n ; c++ )
+cin>>array[c];
+
+cout<<"Enter value to find\n";
+cin>>search;
+
+/calculating first, last and middle position/
+first = 0;
+last = n - 1;
+middle = (first+last)/2;
+
+/*Binary search will search element at middle, if element is not found in middle then it will split array into two parts and if element to be searched is less than middle then it will search only in lower part and if greater then in upper part */
+
+while( first <= last )
+{
+if ( array[middle] == search )
+{
+cout<<search<< "found at location"<<middle+1<<endl;
+break;
+}
+else if ( array[middle] < search )
+first = middle + 1;
+else
+last = middle - 1;
+
+middle = (first + last)/2;
+}
+
+if ( first > last )
+cout<<"Not found!"<<search<< "is not present in the list.\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter number of elements                                                           
+5                                                                                  
+Enter 5 integers                                                                     
+2 7 4 5 9                                                                          
+Enter value to find                                                                
+4                                                                                  
+4 found at location 3 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Binary search using recursion
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int a[10],i,n,m,c,l,u;
+cout<<"Enter the size of an array: ";
+cin>>n;
+cout<<"Enter the elements of the array: " ;
+for(i=0;i < n;i++)
+cin>>a[i];
+
+cout<<"Enter the number to be search: ";
+cin>>m;
+
+l=0,u=n-1;
+c=binary(a,n,m,l,u);
+if(c==0)
+cout<<"Number is not found.";
+else
+cout<<"Number is found.";
+return 0;
+}
+
+/*Binary search will search element at middle, if element is not found and if element to be searched is less than middle then it will search only in lower part and if greater then in upper part */
+
+int binary(int a[],int n,int m,int l,int u)
+{
+int mid,c=0;
+if(l < = u){
+mid=(l+u)/2;
+if(m==a[mid]){
+c=1;
+}
+else if(m < a[mid]){
+return binary(a,n,m,l,mid-1);
+}
+else
+return binary(a,n,m,mid+1,u);
+}
+else
+return c;
+}
+
+
+Output:
+
+Enter the size of an array:4
+Enter the elements of the array:5 3 6 2
+Enter the number to be search:3
+Number is found.
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+call by value
+
+#include <iostream>
+using namespace std;
+
+// function declaration
+int addition(int x, int y);
+
+int main ()
+{
+int a = 5;
+int b = 10;
+int sum ;
+
+cout << "Value of a = " << a << endl;
+cout << "Value of b = " << b << endl;
+
+//Function call to add numbers
+sum = addition(a, b); //call by value of variables
+
+cout << " addition of two numbers = " << sum << endl;
+return 0;
+}
+
+int addition(int x, int y)
+{
+int add;
+add = x+y;
+return add;
+}
+
+
+Output:
+
+Value of a = 5
+Value of b = 10
+addition of two numbers = 15
+
+
+
+
+
+call by reference
+
+#include <iostream>
+using namespace std;
+
+// function declaration
+void swap(int &x, int &y);
+
+int main ()
+{
+int a = 5;
+int b = 10;
+
+cout << "value of a before swapping : " << a << endl;
+cout << "value of b before swapping :" << b << endl;
+
+/* calling a function to swap the values using variable reference.*/
+swap(a, b);
+
+cout << "value of a after swapping : " << a << endl;
+cout << "value of b after swapping :" << b << endl;
+
+return 0;
+}
+
+// function definition to swap the values.
+void swap(int &x, int &y)
+{
+int temp;
+temp = x; /* save the value at address x */
+x = y; /* put y into x */
+y = temp; /* put x into y */
+
+return;
+}
+
+
+Output:
+
+value of a before swapping : 5
+value of b before swapping : 10
+value of a after swapping : 10
+value of b after swapping : 5
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+call by pointer
+
+#include <iostream>
+using namespace std;
+
+// function declaration
+void swap(int *x, int *y);
+
+int main ()
+{
+int a = 5;
+int b = 10;
+
+cout << "value of a before swapping : " << a << endl;
+cout << "value of b before swapping : " << b << endl;
+
+/* calling a function to swap the values.
+* &a indicates pointer to a ie. address of variable a and
+* &b indicates pointer to b ie. address of variable b.
+*/
+swap(&a, &b);
+
+cout << "value of a after swapping : " << a << endl;
+cout << "value of b after swapping : " << b << endl;
+
+return 0;
+}
+
+// function definition to swap the values.
+void swap(int *x, int *y)
+{
+int temp;
+temp = x; / save the value at address x */
+x = *y; / put y into x */
+y = temp; / put x into y */
+
+return;
+}
+
+
+Output:
+
+value of a before swapping : 5
+value of b before swapping : 10
+value of a after swapping : 10
+value of b after swapping : 5
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+calling from outside class
+
+#include <iostream>
+
+using namespace std;
+
+class Rectangle
+{
+public:
+double length;
+void setWidth( double wid );
+double getWidth( void );
+
+private:
+double width;
+};
+
+// Defination of the Member Function getWidth
+double Rectangle::getWidth(void)
+{
+return width ;
+}
+// Defination of the Member Function setWidth
+void Rectangle::setWidth( double wid )
+{
+width = wid;
+}
+
+// Main function for the program
+int main( )
+{
+Rectangle R;
+
+// Can set Length of Rectangle without member function as it is not private
+R.length = 5.0;
+
+cout << "Length of Rectangle : " << R.length <<endl;
+
+// Can not set Width of Rectangle without member function as it is private
+R.setWidth(5.0); // Use member function to set it.
+
+cout << "Width of Rectangle : " << R.getWidth() <<endl;
+
+return 0;
+}
+
+
+Output:
+
+Length of box : 5
+Width of box : 5
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+fibonacci series using recursion
+
+#include <iostream>
+using namespace std;
+int Fibonacci(int);
+
+main()
+{
+int n, i = 0, c;
+
+cout<<"Enter the number of terms ";
+cin>>n;
+
+cout<<"First"<<n<<"terms of Fibonacci series are :-\n";
+
+for ( c = 1 ; c <= n ; c++ )
+{
+cout<<Fibonacci(i)<<"\n";
+i++;
+}
+
+return 0;
+}
+
+int Fibonacci(int n)
+{
+if ( n == 0 )
+return 0;
+else if ( n == 1 )
+return 1;
+else
+return ( Fibonacci(n-1) + Fibonacci(n-2) );
+/adding Fibonacci of (n-1) & (n-2) by recursive calling it/
+} 
+
+
+Output:
+
+Enter the number of terms 5                                                        
+First5terms of Fibonacci series are :-                                             
+0                                                                                  
+1                                                                                  
+1                                                                                  
+2                                                                                  
+3 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+factorial using recursion
+
+#include <iostream>
+using namespace std;
+long factorial(int);
+
+int main()
+{
+int n;
+long f;
+
+cout<<"Enter an integer to find factorial\n";
+cin>>n;
+
+if (n < 0)
+cout<<"Negative integers are not allowed.\n";
+else
+{
+f = factorial(n);
+cout<<n<<"! ="<<f<<"\n";
+}
+
+return 0;
+}
+
+long factorial(int n)
+{
+if (n == 0)
+return 1;
+else
+return(n * factorial(n-1));
+/recursive call to factorial function/
+}
+
+
+Output:
+
+Enter an integer to find factorial                                                 
+5                                                                                  
+5! =120 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+single inheritance
+
+#include <iostream>
+
+using namespace std;
+
+// Base class
+class Shape
+{
+public:
+void setWidth(int w)
+{
+width = w;
+}
+void setHeight(int h)
+{
+height = h;
+}
+protected:
+int width;
+int height;
+};
+
+// Derived class
+class Rectangle: public Shape
+{
+public:
+int getArea()
+{
+return (width * height);
+}
+};
+
+int main(void)
+{
+Rectangle R;
+
+R.setWidth(6);
+R.setHeight(8);
+
+// Print the area of the object.
+cout << "Area of Rectangle : " << R.getArea() << endl;
+
+return 0;
+}
+
+
+Output:
+
+Area of Rectangle : 48
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+multiple inheritance
+
+#include <iostream>
+
+using namespace std;
+
+// Base class Area
+class Area
+{
+public:
+void setlength(int l)
+{
+length = l;
+}
+void setbreath(int b)
+{
+breath = b;
+}
+protected:
+int length;
+int breath;
+};
+
+// Base class PerSQCost
+class PerSQCost
+{
+public:
+int getCost(int area)
+{
+return area * 1500;
+}
+};
+
+// Derived class
+class Room: public Area, public PerSQCost
+{
+public:
+int getArea()
+{
+return (length * breath);
+}
+};
+
+int main(void)
+{
+Room R;
+int area;
+
+R.setlength(5);
+R.setbreath(7);
+
+area = R.getArea();
+
+// Print the area of the object.
+cout << "Area of Room " << R.getArea() << endl;
+
+// Print the total cost of painting
+cout << "Cost of Room : $" << R.getCost(area) << endl;
+
+return 0;
+}
+
+
+Output:
+
+Area of Room : 120
+Cost of Room : $180000
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Hierarchial inheritance
+
+#include <iostream>
+
+using namespace std;
+
+// Base class
+class Shape
+{
+public:
+void setWidth(int w)
+{
+width = w;
+}
+void setHeight(int h)
+{
+height = h;
+}
+protected:
+int width;
+int height;
+};
+
+// Derived class
+class Rectangle: public Shape
+{
+public:
+int getArea()
+{
+return (width * height);
+}
+};
+
+class Triangle: public Shape
+{
+public:
+int getArea()
+{
+return (width * height)/2;
+}
+};
+
+
+int main(void)
+{
+Rectangle R;
+R.setWidth(6);
+R.setHeight(8);
+
+// Print the area of the object.
+cout << "Area of Rectangle : " << R.getArea() << endl;
+
+Triangle T;
+T.setWidth(5);
+T.setHeight(6);
+cout << "Area of Triangle : " << T.getArea() << endl;
+return 0;
+}
+
+
+Output:
+
+Area of Rectangle : 48
+Area of Triangle : 15
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Abstract class
+
+#include <iostream>
+using namespace std;
+
+// Base class
+class Shape
+{
+public:
+// pure virtual function providing interface framework.
+virtual int getArea() = 0;
+void setHeight(int h)
+{
+height = h;
+}
+void setWidth(int w)
+{
+width = w;
+}
+
+protected:
+int width;
+int height;
+};
+
+// Derived class Triangle
+class Triangle: public Shape
+{
+public:
+int getArea()
+{
+return (width * height)/2;
+}
+};
+
+//Derived class Rectangle
+class Rectangle: public Shape
+{
+public:
+int getArea()
+{
+return (width * height);
+}
+};
+
+
+int main(void)
+{
+Rectangle R;
+Triangle T;
+
+R.setWidth(6);
+R.setHeight(10);
+// Print the area of the Rectangle
+cout << " Area of Rectangle : " << R.getArea() << endl;
+
+T.setWidth(4);
+T.setHeight(7);
+// Print the area of the Triangle
+cout << "Area of Triangle : " << T.getArea() << endl;
+
+return 0;
+}
+
+
+Output:
+
+Area of Rectangle : 60
+Area of Triangle : 14
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Wizard of lies
+Data Abstraction
+
+#include <iostream>
+using namespace std;
+
+class Account{
+public:
+// constructor
+Account(int i = 0)
+{
+total = i;
+}
+// Connected with others
+void Deposit(int number)
+{
+total += number;
+}
+// Connected with others
+void Withdraw(int number)
+{
+total -= number;
+}
+// Connected with others
+int getBalance()
+{
+return total;
+};
+private:
+// hidden data from Others
+int total;
+};
+int main( )
+{
+Account a;
+
+a.Deposit(30);
+a.Withdraw(20);
+a.Deposit(10);
+a.Deposit(10);
+a.Withdraw(20);
+
+cout << "Balance : " << a.getBalance() <<endl;
+return 0;
+}
+
+
+Output:
+
+Balance : 10
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+function overriding(dynamic polymorphism)
+
+#include <iostream>
+
+using namespace std;
+
+class Animal {
+
+public: void eat(){
+
+cout<<"Eating...";
+
+}
+
+};
+
+class Dog: public Animal {
+
+public: void eat() {
+
+cout<<"Eating bread...";
+
+}
+
+};
+
+int main(void) {
+
+Dog d = Dog();
+
+d.eat();
+
+return 0;
+
+}
+
+
+
+Output:
+
+Eating bread...
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+function overloading(static polymorphism)
+
+#include <iostream>
+using namespace std;
+
+class printData
+{
+public:
+void print(int i) {
+cout << "Displaying the int : " << i << endl;
+}
+
+void print(double f) {
+cout << "Displaying the float : " << f << endl;
+}
+
+void print(char* c) {
+cout << "Displaying the character : " << c << endl;
+}
+};
+
+int main(void)
+{
+printData pd;
+
+
+pd.print(5); // Call print to print integer
+
+pd.print(500.263); // Call print to print float
+
+pd.print("Hello C++"); // Call print to print character
+
+return 0;
+}
+
+
+Output:
+
+isplaying the int : 5
+Displaying the float : 500.263
+Displaying the character : Hello C++
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+operator overloading
+
+#include <iostream>
+using namespace std;
+
+class Cube
+{
+public:
+
+void setLength( double l )
+{
+length = l;
+}
+
+void setBreadth( double b )
+{
+breadth = b;
+}
+
+void setHeight( double h )
+{
+height = h;
+}
+double getVolume(void)
+{
+return length * breadth * height;
+}
+
+// Overload + operator to add two Cube objects.
+Cube operator+(const Cube& b)
+{
+Cube C;
+C.length = this->length + b.length;
+C.breadth = this->breadth + b.breadth;
+C.height = this->height + b.height;
+return C;
+}
+private:
+double length; // Length of a Cube
+double breadth; // Breadth of a Cube
+double height; // Height of a Cube
+};
+// Main function for the program
+int main( )
+{
+Cube C1; // Declare C1 of type Cube
+Cube C2; // Declare C2 of type Cube
+Cube C3; // Declare C3 of type Cube
+double volume = 0.0; // Store the volume of a Cube here
+
+// Cube 1 specification
+C1.setLength(4.0);
+C1.setBreadth(6.0);
+C1.setHeight(5.0);
+
+// Cube 2 specification
+C2.setLength(8.0);
+C2.setBreadth(4.0);
+C2.setHeight(10.0);
+
+// volume of Cube 1
+volume = C1.getVolume();
+cout << "Volume of Cube 1 : " << volume <<endl;
+
+// volume of Cube 2
+volume = C2.getVolume();
+cout << "Volume of Cube 2 : " << volume <<endl;
+
+// Add two object as follows:
+C3 = C1 + C2;
+
+// volume of Cube 3
+volume = C3.getVolume();
+cout << "Volume of Cube 3 : " << volume <<endl;
+
+return 0;
+}
+
+
+Output:
+
+volume of Cube 1 : 120
+Volume of Cube 2 : 320
+Volume of Cube 3 : 1800
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Unary operator overloading
+
+#include <iostream>
+using namespace std;
+
+class Distance
+{
+private:
+int feet; // 0 to infinite
+int inches; // 0 to 12
+public:
+// required constructors
+Distance(){
+feet = 0;
+inches = 0;
+}
+Distance(int f, int i){
+feet = f;
+inches = i;
+}
+// method to display distance
+void displayDistance()
+{
+cout << "F: " << feet << " I:" << inches <<endl;
+}
+// overloaded minus (-) operator
+Distance operator- ()
+{
+feet = -feet;
+inches = -inches;
+return Distance(feet, inches);
+}
+};
+int main()
+{
+Distance D1(4,7), D2(-5, 3),D3(10,-2);
+
+-D1; // apply negation
+D1.displayDistance(); // display D1
+
+-D2; // apply negation
+D2.displayDistance(); // display D2
+
+-D3; // apply negation
+D3.displayDistance(); // display D3
+
+return 0;
+}
+
+
+Output:
+
+F: -4 I: -7
+F: 5 I: -3
+F: -10 I: 2
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Binary operator overloading
+
+#include <iostream>
+using namespace std;
+
+class Cube
+{
+public:
+
+void setLength( double l )
+{
+length = l;
+}
+
+void setBreadth( double b )
+{
+breadth = b;
+}
+
+void setHeight( double h )
+{
+height = h;
+}
+double getVolume(void)
+{
+return length * breadth * height;
+}
+
+// Overload + operator to add two Cube objects.
+Cube operator+(const Cube& b)
+{
+Cube C;
+C.length = this->length + b.length;
+C.breadth = this->breadth + b.breadth;
+C.height = this->height + b.height;
+return C;
+}
+private:
+double length; // Length of a Cube
+double breadth; // Breadth of a Cube
+double height; // Height of a Cube
+};
+// Main function for the program
+int main( )
+{
+Cube C1; // Declare C1 of type Cube
+Cube C2; // Declare C2 of type Cube
+Cube C3; // Declare C3 of type Cube
+double volume = 0.0; // Store the volume of a Cube here
+
+// Cube 1 specification
+C1.setLength(4.0);
+C1.setBreadth(6.0);
+C1.setHeight(5.0);
+
+// Cube 2 specification
+C2.setLength(8.0);
+C2.setBreadth(4.0);
+C2.setHeight(10.0);
+
+// volume of Cube 1
+volume = C1.getVolume();
+cout << "Volume of Cube 1 : " << volume <<endl;
+
+// volume of Cube 2
+volume = C2.getVolume();
+cout << "Volume of Cube 2 : " << volume <<endl;
+
+// Add two object as follows:
+C3 = C1 + C2;
+
+// volume of Cube 3
+volume = C3.getVolume();
+cout << "Volume of Cube 3 : " << volume <<endl;
+
+return 0;
+}
+
+
+Output:
+
+Volume of Cube 1 : 120
+Volume of Cube 2 : 320
+Volume of Cube 3 : 1800
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Assignment operator
+
+#include <iostream>
+
+using namespace std;
+const int MAX = 5;
+
+int main ()
+{
+int arr[MAX] = {10,20,30,40,50};
+int *ptr[MAX];
+
+for (int i = 0; i < MAX; i++)
+{
+ptr[i] = &arr[i]; // assign the address of integer.
+}
+for (int i = 0; i < MAX; i++)
+{
+cout << "Value of var[" << i << "] = " << *ptr[i] << endl;
+}
+return 0;
+}
+
+
+Output:
+
+Value of var[0] = 10
+Value of var[1] = 20
+Value of var[2] = 30
+Value of var[3] = 40
+Value of var[4] = 50
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Relational operator
+
+#include <iostream>
+using namespace std;
+
+class Distance
+{
+private:
+int feet; // 0 to infinite
+int inches; // 0 to 12
+public:
+// required constructors
+Distance(){
+feet = 0;
+inches = 0;
+}
+Distance(int f, int i){
+feet = f;
+inches = i;
+}
+// method to display distance
+void displayDistance()
+{
+cout << "F: " << feet << " I:" << inches <<endl;
+}
+// overloaded minus (-) operator
+Distance operator- ()
+{
+feet = -feet;
+inches = -inches;
+return Distance(feet, inches);
+}
+// overloaded < operator
+bool operator <(const Distance& d)
+{
+if(feet < d.feet)
+{
+return true;
+}
+if(feet == d.feet && inches < d.inches)
+{
+return true;
+}
+return false;
+}
+};
+int main()
+{
+Distance D1(4,7), D2(-5, 3);
+
+if( D1 < D2 )
+{
+cout << "D1 is less than D2 " << endl;
+}
+else
+{
+cout << "D2 is less than D1 " << endl;
+}
+return 0;
+}
+
+
+Output:
+
+D2 is less than D1
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+stack using array
+
+/*
+
+A stack is an abstract data structure that contains a collection of elements. Stack implements the LIFO mechanism i.e. the element that is pushed at the end is popped out first. Some of the principle operations in the stack are -
+
+* Push - This adds a data value to the top of the stack.
+
+* Pop - This removes the data value on top of the stack
+
+* Peek - This returns the top data value of the stack A program that implements a stack using array is given as follows.
+
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int stack[100], n=100, top=-1;
+
+void push(int val) {
+
+if(top>=n-1)
+
+cout<<"Stack Overflow"<<endl;
+
+else { top++; stack[top]=val;
+
+}
+
+}
+
+void pop() {
+
+if(top<=-1)
+
+cout<<"Stack Underflow"<<endl;
+
+else {
+
+cout<<"The popped element is "<< stack[top] <<endl;
+
+top--;
+
+}
+
+}
+
+void display() {
+
+if(top>=0) {
+
+cout<<"Stack elements are:";
+
+for(int i=top; i>=0; i--)
+
+cout<<stack[i]<<" ";
+
+cout<<endl;
+
+}
+
+else cout<<"Stack is empty";
+
+}
+
+int main() {
+
+int ch, val;
+
+cout<<"1) Push in stack"<<endl;
+
+cout<<"2) Pop from stack"<<endl;
+
+cout<<"3) Display stack"<<endl;
+
+cout<<"4) Exit"<<endl;
+
+do {
+
+cout<<"Enter choice: "<<endl;
+
+cin>>ch;
+
+switch(ch) {
+
+case 1: 
+
+cout<<"Enter value to be pushed:"<<endl;
+
+cin>>val;
+
+push(val);
+
+break; 
+
+ case 2:  pop(); break; 
+
+ case 3:  display(); break; 
+
+ case 4:  cout<<"Exit"<<endl; break; 
+
+ default: cout<<"Invalid Choice"<<endl; 
+
+} }
+
+while(ch!=4);
+
+return 0;
+
+}
+
+
+
+Output:
+
+1) Push in stack
+
+2) Pop from stack
+
+3) Display stack
+
+4) Exit Enter choice: 1
+
+Enter value to be pushed: 2
+
+Enter choice: 1
+
+Enter value to be pushed: 6
+
+Enterchoice: 1
+
+Enter value to be pushed: 8
+
+Enter choice: 1
+
+Enter value to be pushed: 7
+
+Enter choice: 2
+
+The popped element is 7
+
+Enter choice: 3
+
+Stack elements are:8 6 2
+
+Enter choice: 5
+
+Invalid Choice Enter choice: 4
+
+Exit
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+queue using array
+
+#include <iostream>
+
+using namespace std;
+
+int queue[100], n = 100, front = - 1, rear = - 1;
+
+void Insert() {
+
+int val;
+
+if (rear == n - 1)
+
+cout<<"Queue Overflow"<<endl;
+
+else {
+
+if (front == - 1)
+
+front = 0;
+
+cout<<"Insert the element in queue : "<<endl;
+
+cin>>val;
+
+rear++;
+
+queue[rear] = val;
+
+}
+
+}
+
+void Delete() {
+
+if (front == - 1 || front > rear) {
+
+cout<<"Queue Underflow ";
+
+return ;
+
+}
+
+else {
+
+cout<<"Element deleted from queue is : "<< queue[front] <<endl;
+
+front++;
+
+}     }
+
+void Display() {
+
+if (front == - 1)
+
+cout<<"Queue is empty"<<endl;
+
+else {
+
+cout<<"Queue elements are : ";
+
+for (int i = front; i <= rear; i++)
+
+cout<<queue[i]<<" ";
+
+cout<<endl;
+
+}
+
+}
+
+int main() {
+
+int ch;
+
+cout<<"1) Insert element to queue"<<endl;
+
+cout<<"2) Delete element from queue"<<endl;
+
+cout<<"3) Display all the elements of queue"<<endl;
+
+cout<<"4) Exit"<<endl;
+
+do {
+
+cout<<"Enter your choice : "<<endl;
+
+cin>>ch;
+
+switch (ch) {
+
+case 1: Insert();
+
+break;
+
+case 2: Delete();
+
+break;
+
+case 3: Display();       break;
+
+case 4: cout<<"Exit"<<endl;    break;
+
+default: cout<<"Invalid choice"<<endl;
+
+}  }
+
+while(ch!=4);
+
+return 0;
+
+}
+
+
+
+Output:
+
+1) Insert element to queue
+
+2) Delete element from queue
+
+3) Display all the elements of queue
+
+4) Exit Enter your choice : 1
+
+Insert the element in queue : 4
+
+Enter your choice : 1 Insert the element in queue : 3
+
+Enter your choice : 1 Insert the element in queue : 5
+
+Enter your choice : 2
+
+Element deleted from queue is : 4
+
+Enter your choice : 3
+
+Queue elements are : 3 5
+
+Enter your choice : 7
+
+Invalid choice Enter your choice : 4
+
+Exit
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+stack using linkedlist
+
+#include<iostream>
+
+using namespace std;
+
+// Creating a NODE Structure
+
+struct node {
+
+int data;
+
+struct node *next;
+
+};
+
+// Creating a class STACK
+
+class stack {
+
+struct node *top;
+
+public: stack() // constructor {
+
+top=NULL; }
+
+void push();
+
+// to insert an element
+
+void pop(); // to delete an element
+
+void show(); // to show the stack };
+
+// PUSH Operation void stack::push() {
+
+int value;
+
+struct node *ptr;
+
+cout<<"\nPUSH Operationn";
+
+cout<<"Enter a number to insert: ";
+
+cin>>value;
+
+ptr=new node;
+
+ptr->data=value;
+
+ptr->next=NULL;
+
+if(top!=NULL) ptr->next=top;
+
+top=ptr;
+
+cout<<"\nNew item is inserted to the stack!!!";
+
+}
+
+// POP Operation
+
+void stack::pop() {
+
+struct node *temp;
+
+if(top==NULL) {
+
+cout<<"\nThe stack is empty!!!"; }
+
+temp=top; top=top->next;
+
+cout<<"\nPOP Operation........\nPoped value is "<<temp->data;
+
+delete temp;
+
+}
+
+// Show stack
+
+void stack::show() {
+
+struct node *ptr1=top;
+
+cout<<"\nThe stack is\n";
+
+while(ptr1!=NULL) {
+
+cout<<ptr1->data<<" ->";
+
+ptr1=ptr1->next;
+
+}
+
+cout<<"NULL\n";
+
+}
+
+// Main function
+
+int main() {
+
+stack s;
+
+int choice;
+
+while(1) {
+
+cout<<"\n-----------------------------------------------------------"; cout<<"\n\t\tSTACK USING LINKED LIST\n\n"; cout<<"1:PUSH\n2:POP\n3:DISPLAY STACK\n4:EXIT";
+
+cout<<"\nEnter your choice(1-4): ";
+
+cin>>choice;
+
+switch(choice) {
+
+case 1: s.push(); break;
+
+case 2: s.pop(); break;
+
+case 3: s.show(); break;
+
+case 4: return 0;
+
+break;
+
+default: cout<<"\nPlease enter correct choice(1-4)!!";
+
+break;
+
+}
+
+}
+
+return 0;
+
+}
+
+
+
+Output:
+
+STACK USING LINKED LIST 1:PUSH 2:POP 3:DISPLAY STACK 4:EXIT Enter your choice(1-4): 1 PUSH Operation Enter a number to insert: 12 New item is inserted to the stack!!! ----------------------------------------------------------- STACK USING LINKED LIST 1:PUSH 2:POP 3:DISPLAY STACK 4:EXIT Enter your choice(1-4): 1 PUSH Operation Enter a number to insert: 5 New item is inserted to the stack!!! ----------------------------------------------------------- STACK USING LINKED LIST 1:PUSH 2:POP 3:DISPLAY STACK 4:EXIT Enter your choice(1-4): 2 POP Operation........ Poped value is 5 ----------------------------------------------------------- STACK USING LINKED LIST 1:PUSH 2:POP 3:DISPLAY STACK 4:EXIT Enter your choice(1-4): 3 The stack is 12 ->NULL ----------------------------------------------------------- STACK USING LINKED LIST 1:PUSH 2:POP 3:DISPLAY STACK 4:EXIT Enter your choice(1-4): 4
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+queue using linkedlist
+
+ #include<iostream>
+
+using namespace std;
+
+struct node {
+
+int data;
+
+node *next;
+
+}*front = NULL,*rear = NULL,*p = NULL,*np = NULL;
+
+void push(int x) {
+
+np = new node;
+
+np->data = x;
+
+np->next = NULL;
+
+if(front == NULL) {
+
+front = rear = np;
+
+rear->next = NULL;
+
+}
+
+else {
+
+rear->next = np;
+
+rear = np;
+
+rear->next = NULL;
+
+}
+
+}
+
+int remove() {
+
+int x;
+
+if(front == NULL) {
+
+cout<<"empty queuen"; }
+
+else
+
+{
+
+p = front;   x = p->data;
+
+front = front->next;
+
+delete(p);
+
+return(x);
+
+}
+
+}
+
+int main() {
+
+int n,c = 0,x;
+
+cout<<"Enter the number of values to be pushed into queuen";
+
+cin>>n;
+
+while (c < n) {
+
+cout<<"Enter the value to be entered into queuen";
+
+cin>>x;
+
+push(x);
+
+c++;
+
+}
+
+cout<<"Removed Values";
+
+while(true) {
+
+if (front != NULL)
+
+cout<<remove()<<endl;
+
+else break;
+
+}
+
+return 0;
+
+}
+
+
+
+Output:
+
+Enter the number of values to be pushed into queue 5
+
+Enter the value to be entered into queue 5
+
+Enter the value to be entered into queue 3
+
+Enter the value to be entered into queue 2
+
+Enter the value to be entered into queue 9
+
+Enter the value to be entered into queue 1
+
+Removed Values 5 3 2 9 1
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Virtual function
+
+// C++ program to illustrate
+
+// concept of Virtual Functions 
+
+#include<iostream>
+
+using namespace std;
+
+class base {
+
+public: virtual void print () {
+
+cout<< "print base class" <<endl; }
+
+void show () {
+
+cout<< "show base class" <<endl; }
+
+};
+
+class derived:public base {
+
+public: void print () {
+
+cout<< "print derived class" <<endl; }
+
+void show () {
+
+cout<< "show derived class" <<endl; }
+
+};
+
+int main() {
+
+base *bptr; derived d; bptr = &d;
+
+//virtual function, binded at runtime
+
+bptr->print();
+
+// Non-virtual function, binded at compile time
+
+bptr->show(); }
+
+
+
+Output:
+
+print derived class show base class
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Reference as parameter
+
+#include <iostream>
+using namespace std;
+
+// function declaration with reference
+void swap(int& x, int& y);
+
+int main ()
+{
+int a = 10;
+int b = 20;
+
+cout << "Value of a Before swapping :" << a << endl;
+cout << "Value of b Before swapping :" << b << endl;
+
+/* Function call */
+swap(a, b);
+
+cout << "Value of a After swapping :" << a << endl;
+cout << "Value of b After swapping :" << b << endl;
+
+return 0;
+}
+
+void swap(int& x, int& y) //reference variable is as parameter to the function
+{
+int temp;
+temp = x;
+x = y;
+y = temp;
+
+return;
+}
+
+
+Output:
+
+Value of a Before swapping :10
+Value of b Before swapping :20
+Value of a After swapping :20
+Value of b After swapping :10
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+pointer values and adress
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+int var = 10; // Variable Declaration
+int *ip; // variable for Pointer
+
+ip = &var; // address of variable is stored in pointer variable
+
+cout << "Value of var variable: ";
+cout << var << endl; //Print value of variable
+
+// Print the address of variable
+cout << "Address stored in ip variable: ";
+cout << ip << endl;
+
+// access the value at the address available in pointer
+cout << "Value of *ip variable: ";
+cout << *ip << endl;
+
+return 0;
+}
+
+
+Output:
+
+Value of var variable: 10
+Address stored in ip variable: 0x22ff44
+Value of *ip variable: 10
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+nCr & nPr
+
+#include <iostream>
+using namespace std;
+long factorial(int);
+long find_ncr(int, int);
+long find_npr(int, int);
+
+main()
+{
+int n, r;
+long ncr, npr;
+
+cout<<"Enter the value of n and r\n";
+cin>>n>>r;
+
+ncr = find_ncr(n, r);
+npr = find_npr(n, r);
+
+cout<<n<<"C"<<r<<" ="<<ncr<<"\n";
+cout<<n<<"P"<<r<<"=" <<npr<<"\n";
+
+return 0;
+}
+
+long find_ncr(int n, int r)
+{
+long result;
+
+result = factorial(n)/(factorial(r)*factorial(n-r));
+
+return result;
+}
+
+long find_npr(int n, int r)
+{
+long result;
+
+result = factorial(n)/factorial(n-r);
+
+return result;
+}
+
+long factorial(int n)
+{
+int c;
+long result = 1;
+for( c = 1 ; c <= n ; c++ )
+result = result*c;
+return ( result );
+}
+
+
+Output:
+
+Enter the value of n and r                                                         
+2                                                                                  
+3                                                                                  
+2C3 =0                                                                             
+2P3=2  
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+
+
+LCM & HCF
+
+#include <iostream>
+using namespace std;
+long gcd(long, long);
+int main() {
+long x, y, hcf, lcm;
+
+cout<<"Enter two integers\n";
+cin>>x>>y;
+
+hcf = gcd(x, y);
+lcm = (x*y)/hcf;
+
+cout<<"Greatest common divisor of "<<x <<"and"<<y<<" = "<<hcf<<"\n";
+cout<<"Least common multiple of "<< x <<"and "<< y<<"= "<<lcm<<"\n";
+
+return 0;
+}
+
+/*if 1st no is 0 then 2nd no is gcd
+make 2nd no 0 by subtracting smallest from largest and return 1st no as gcd*/
+long gcd(long x, long y) {
+if (x == 0) {
+return y;
+}
+
+while (y != 0) {
+if (x > y) {
+x = x - y;
+}
+else {
+y = y - x;
+}
+}
+
+return x;
+}
+
+
+Output:
+
+Enter two integers                                                                 
+4 7                                                                                
+Greatest common divisor of 4and7 = 1                                               
+Least common multiple of 4and 7= 28 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Armstrong num
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int r;
+long number = 0, c, sum = 0, temp;
+
+cout<<"Enter an integer upto which you want to find armstrong numbers\n";
+cin>>number;
+
+cout<<"Following armstrong numbers are found from 1 to"<<number<<"\n";
+
+/if sum of cubes of each digit in a number is same as the number then it is called as armstrong no./
+for( c = 1 ; c <= number ; c++ )
+{
+temp = c;
+while( temp != 0 )
+{
+r = temp%10;
+sum = sum + r*r*r;
+temp = temp/10;
+/taking unit place digits cube and adding into sum/
+}
+if ( c == sum )
+cout<<c<<"\n";
+/If no is Armstrong no then print/
+sum = 0;
+}
+
+return 0;
+}
+
+
+Output:
+
+Enter an integer upto which you want to find armstrong numbers                     
+9000                                                                               
+Following armstrong numbers are found from 1 to9000                                
+1                                                                                  
+153                                                                                
+370                                                                                
+371                                                                                
+407 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+
+
+
+dynamic memory allocation(constructor & destructor)
+
+#include <iostream>
+using namespace std;
+
+class Cube
+{
+public:
+Cube() {
+cout << "Constructor is called!" <<endl;
+}
+~Cube() {
+cout << "Destructor is called!" <<endl;
+}
+};
+
+int main( )
+{
+Cube* myCubeArray = new Cube[5];
+
+delete [] myCubeArray; // Delete array
+
+return 0;
+}
+
+/*
+Output:
+Constructor is called!
+Constructor is called!
+Constructor is called!
+Constructor is called!
+Constructor is called!
+Destructor is called!
+Destructor is called!
+Destructor is called!
+Destructor is called!
+Destructor is called!*/
+
+
