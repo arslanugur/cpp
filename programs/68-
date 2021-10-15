@@ -1,0 +1,1008 @@
+Area of Triangle
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int height, base;
+float ans;/ans may come in fractions/
+
+cout<<"Enter height and base";
+cin>>height>>base;
+ans= (1/2)*height*base;
+/* mathematical formula*/
+
+cout<<"Area if triangle is"<<ans;
+} 
+
+/*
+Output:
+Enter height and base 4                                                             
+6                                                                                  
+Area if triangle is 12
+*/
+
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+sum of n numbers
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int n, sum = 0, c, value;
+
+cout<<"Enter the number of integers you want to add\n";
+cin>>n;
+
+cout<<"Enter"<<n<<"integers"<<"\n";
+
+for (c = 1; c <= n; c++)
+{
+cin>>value;
+sum = sum + value;
+/adding each no in sum/
+}
+
+cout<<"Sum of entered integers ="<<sum<<"\n";
+
+return 0;
+} 
+
+/*
+Output:
+Enter the number of integers you want to add: 4                                                                   
+Enter4integers: 4 5 6 7                                                                            
+Sum of entered integers =22 
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+refrence as return value
+
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int arr[] = {10,20,30,40,50};
+
+int& setValues( int i )
+{
+return arr[i]; // return a reference
+}
+
+int main ()
+{
+
+cout << "Before changing values " << endl;
+for ( int i = 0; i < 5; i++ )
+{
+cout << "arr[" << i << "] = ";
+cout << arr[i] << endl;
+}
+
+setValues(1) = 60; // change 2nd element
+setValues(3) = 70; // change 4th element
+
+cout << "After changing values " << endl;
+for ( int i = 0; i < 5; i++ )
+{
+cout << "arr[" << i << "] = ";
+cout << arr[i] << endl;
+}
+return 0;
+}
+
+/*
+Output:
+Before changing values
+arr[0] = 10
+arr[1] = 20
+arr[2] = 30
+arr[3] = 40
+arr[4] = 50
+After changing values
+arr[0] = 10
+arr[1] = 60
+arr[2] = 30
+arr[3] = 70
+arr[4] = 50
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+constructor class
+
+#include <iostream>
+using namespace std;
+
+class Cube
+{
+public:
+void setLength( double len );
+double getLength( void );
+Cube(); // Constructor declaration
+
+private:
+double length;
+};
+
+// definitions of constructor
+Cube::Cube(void)
+{
+cout << "Object is being created" << endl;
+}
+
+//defination of other member functions
+void Cube::setLength( double len )
+{
+length = len;
+}
+
+double Cube::getLength( void )
+{
+return length;
+}
+// Main function
+int main( )
+{
+Cube C;
+
+// set length of Cube
+C.setLength(5.0);
+cout << "Length of Cube : " << C.getLength() <<endl;
+
+return 0;
+}
+
+/*
+Output:
+Object is being created
+Length of Cube : 5
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+parameterized constructor
+
+#include <iostream>
+using namespace std;
+
+class Cube
+{
+public:
+void setLength( double len );
+double getLength( void );
+Cube(double len); // Parameterized Constructor declaration
+
+private:
+double length;
+};
+
+// definitions of constructor
+Cube::Cube( double len)
+{
+cout << "Object is being created, length = " << len << endl;
+length = len;
+}
+
+void Cube::setLength( double len )
+{
+length = len;
+}
+
+double Cube::getLength( void )
+{
+return length;
+}
+// Main function for the program
+int main( )
+{
+Cube C(5.0);
+
+// get initially set length.
+cout << "Length of Cube : " << C.getLength() <<endl;
+// set Cube length again
+C.setLength(10.0);
+cout << "Length of Cube : " << C.getLength() <<endl;
+
+return 0;
+}
+
+/*
+Output:
+Object is being created, length = 5
+Length of Cube : 5
+Length of Cube : 10
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+copy constructor
+
+#include <iostream>
+using namespace std;
+
+class Cube
+{
+public:
+int getLength( void );
+Cube( int len ); // Parameterized constructor
+Cube( const Cube &obj); // copy constructor
+~Cube(); // destructor
+
+private:
+int *ptr;
+};
+
+// Member functions definitions including constructor
+Cube::Cube(int len)
+{
+cout << "Ptr. allocated by Parameterized constructor " << endl;
+// allocate memory for the pointer;
+ptr = new int;
+*ptr = len;
+}
+
+Cube::Cube(const Cube &obj)
+{
+cout << "Ptr. allocated by Copy constructor" << endl;
+ptr = new int;
+*ptr = *obj.ptr; // copy the value
+}
+
+Cube::~Cube(void)
+{
+cout << "Deleting Constructor and making Memory free" << endl;
+delete ptr;
+}
+int Cube::getLength( void )
+{
+return *ptr;
+}
+
+void display(Cube obj)
+{
+cout << "Length of Cube : " << obj.getLength() <<endl;
+}
+
+// Main function for the program
+int main( )
+{
+Cube C(5);
+
+display(C);
+
+return 0;
+}
+
+/*
+Output:
+Ptr. allocated by Parameterized constructor
+Ptr. allocated by Copy constructor
+Length of Cube : 5
+Deleting Constructor and making Memory free
+Deleting Constructor and making Memory free
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+public member function
+
+#include <iostream>
+using namespace std;
+
+class Rectangle
+{
+public:
+double length;
+double breadth;
+void setLength( double l );
+double getLength( void );
+void setBreadth( double b );
+double getBreadth( void );
+};
+
+// Member functions definitions
+double Rectangle::getLength(void)
+{
+return length ;
+}
+
+void Rectangle::setLength( double l )
+{
+length = l;
+}
+
+double Rectangle::getBreadth(void)
+{
+return breadth ;
+}
+
+void Rectangle::setBreadth( double b )
+{
+breadth = b;
+}
+
+// Main function for the program
+int main( )
+{
+Rectangle R;
+
+// set Rectangle length and Breadth
+R.setLength(5.0);
+R.setBreadth(4.0);
+cout << "Length of Rectangle : " << R.getLength() <<endl;
+cout << "Breadth of Rectangle : " << R.getBreadth() <<endl;
+
+// set Rectangle Length and Breadth without member function
+R.length = 10.0;
+R.breadth = 8.0;
+cout << "Length of Rectangle : " << R.length <<endl;
+cout << "Breadth of Rectangle : " << R.breadth <<endl;
+return 0;
+}
+
+/*
+Output:
+Length of Rectangle : 5
+Breadth of Rectangle : 4
+Length of Rectangle : 10
+Breadth of Rectangle : 8
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+mathematical functions
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main ()
+{
+int a = 100;
+int b = -75;
+float c = 243.16;
+float d = 379.51;
+
+// mathematical operations;
+cout << "sin(a) :" << sin(a) << endl;
+cout << "abs(b) :" << abs(b) << endl;
+cout << "floor(c) :" << floor(c) << endl;
+cout << "sqrt(d) :" << sqrt(d) << endl;
+cout << "pow( d, 2) :" << pow(d, 2) << endl;
+
+return 0;
+}
+
+/*
+Output:
+sign(d) :-0.506366
+abs(i) :75
+floor(d) :243
+sqrt(f) :19.481
+pow( d, 2 ) :144028
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+inline function
+
+#include <iostream>
+using namespace std;
+
+inline int Min(int x, int y) //Inline Function means Function call is replaced by actual code
+{
+return (x < y)? x : y;
+}
+
+// Main function for the program
+int main( )
+{
+
+cout << "Min (5,10) : " << Min(5,10) << endl;
+cout << "Min (25,15): " << Min(25,15) << endl;
+cout << "Min (100,200): " << Min(100,200) << endl;
+return 0;
+}
+
+/*
+Output:
+Min (5,10): 5
+Min (25,15): 15
+Min (100,200): 100
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Template function
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+template <typename T>
+inline T const& Max (T const& a, T const& b)
+{
+return a < b ? b:a;
+}
+int main ()
+{
+
+int i = 10;
+int j = 20;
+cout << "Max(i, j): " << Max(i, j) << endl;
+
+double f1 = 12.5;
+double f2 = 17.5;
+cout << "Max(f1, f2): " << Max(f1, f2) << endl;
+
+string s1 = "Hello";
+string s2 = "World";
+cout << "Max(s1, s2): " << Max(s1, s2) << endl;
+
+return 0;
+}
+
+/*
+Output:
+Max(i, j): 20
+Max(f1, f2): 17.5
+Max(s1, s2): World
+*/
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+friend function
+
+#include <iostream>
+using namespace std;
+
+class Rectangle
+{
+double Length;
+public:
+friend void printLength( Rectangle R );
+void setLength( double len );
+};
+
+// setLength is the member function of class Rectangle
+void Rectangle::setLength( double len )
+{
+Length = len;
+}
+
+//printLength() setLength is the member function of any class
+
+
+void printLength( Rectangle Rectangle )
+{
+// Because printLength() is a friend of Rectangle, it can directly access any member of this class
+
+cout << "Length of Rectangle : " << R.Length <<endl;
+}
+
+// Main function for the program
+int main( )
+{
+Rectangle R;
+
+// set Rectangle Length without member function
+R.setLength(10.0);
+
+// Friend Function is used for Printing length
+printLength( R );
+
+return 0;
+}
+
+/*
+Output:
+Length of Rectangle : 5
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+class member unction
+
+#include <iostream>
+using namespace std;
+
+class Cube
+{
+public:
+double length; // Length of a Cube
+double breadth; // Breadth of a Cube
+double height; // Height of a Cube
+
+// Member functions declaration
+double getVolume(void);
+void setLength( double l );
+void setBreadth( double b);
+void setHeight( double h );
+};
+
+// Member functions definitions
+double Cube::getVolume(void)
+{
+return length * breadth * height;
+}
+
+void Cube::setLength( double l )
+{
+length = l;
+}
+
+void Cube::setBreadth( double b )
+{
+breadth = b;
+}
+
+void Cube::setHeight( double h )
+{
+height = h;
+}
+
+// Main function for the program
+int main( )
+{
+Cube C1; // Declare C1 of type Cube
+Cube C2; // Declare C2 of type Cube
+double volume = 0.0; // Store the volume of a Cube here
+
+// Cube 1 specification
+C1.setLength(3.0);
+C1.setBreadth(10.0);
+C1.setHeight(5.0);
+
+// Cube 2 specification
+C2.setLength(20.0);
+C2.setBreadth(4.0);
+C2.setHeight(8.0);
+
+// volume of Cube 1
+volume = C1.getVolume();
+cout << "Volume of CUbe 1 : " << volume <<endl;
+
+// volume of Cube 2
+volume = C2.getVolume();
+cout << "Volume of Cube 2 : " << volume <<endl;
+return 0;
+}
+
+/*
+Output:
+Volume of Cube 1 : 150
+Volume of Cube 2 : 640
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+static function
+
+#include <iostream>
+using namespace std;
+
+class Cube
+{
+public:
+static int objectCount;
+// Constructor definition
+Cube(double l=5.0, double b=5.0, double h=5.0)
+{
+cout <<"Constructor called." << endl;
+length = l;
+breadth = b;
+height = h;
+// Increase every time object is created
+objectCount++;
+}
+double Volume()
+{
+return length * breadth * height;
+}
+static int getCount()
+{
+return objectCount;
+}
+private:
+double length; // Length of a Cube
+double breadth; // Breadth of a Cube
+double height; // Height of a Cube
+};
+
+// Initialize static member of class Cube
+int Cube::objectCount = 0;
+
+int main(void)
+{
+
+// Print total number of objects before creating object.
+cout << "Initially Object Count : " << Cube::getCount() << endl;
+
+Cube C1(2.0, 1.2, 1.8); // Declare C1
+Cube C2(3.5, 2.5, 1.9); // Declare C2
+Cube C3(2.4, 1.6, 6.0); // Declare C3
+
+// Print total number of objects after creating object.
+cout << "Finally Object Count: " << Cube::getCount() << endl;
+
+return 0;
+}
+
+/*
+Output:
+Initially Object Count : 0
+Constructor called.
+Constructor called.
+Constructor called.
+finally Object Count : 3
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+function Example
+
+#include <iostream>
+using namespace std;
+
+// Function declaration
+int Min(int x, int y);
+
+int main ()
+{
+
+int a = 5;
+int b = 10;
+int Minnumber;
+
+// Function call
+Minnumber = Min(a, b);
+
+cout << "Min value is : " << Minnumber << endl;
+
+return 0;
+}
+
+// function definition
+int Min(int x, int y)
+{
+
+int result;
+
+if (x < y)
+result = x;
+else
+result = y;
+
+return result;
+}
+
+/*
+Output:
+Min value is : 5
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Decimal to binary
+
+#include <iostream>
+using namespace std;
+int main()
+{
+long num, decimal_num, remainder, base = 1, binary = 0;
+
+cout<<"Enter a decimal integer \n";
+cin>>num;
+decimal_num = num;
+while (num > 0)
+{
+remainder = num % 2;
+binary = binary + remainder * base;
+num = num / 2;
+base = base * 10;
+}
+cout<<"Input number is ="<<decimal_num<<"\n";
+cout<<"Its binary equivalent is ="<<binary<<"\n";
+}
+
+/*
+Output:
+Enter a decimal integer: 4                                                                                  
+Input number is =4                                                                 
+Its binary equivalent is =100
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Decimal to octal
+
+#include <iostream>
+using namespace std;
+int main()
+{
+long num, decimal_num, remainder, base = 1, octal = 0;
+
+cout<<"Enter a decimal integer \n";
+cin>>num;
+decimal_num = num;
+while (num > 0)
+{
+remainder = num % 8;
+octal = octal + remainder * base;
+num = num / 8;
+base = base * 10;
+}
+cout<<"Input number is ="<<decimal_num<<"\n";
+cout<<"Its octal equivalent is ="<<octal<<"\n";
+}
+
+/*
+Output:
+Enter a decimal integer: 67                                                                                 
+Input number is =67                                                                
+Its octal equivalent is =103
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Decimal to binary bitwise
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int n, c, k;
+
+cout<<"Enter an integer in decimal number system\n";
+cin>>n;
+
+cout<<n<<"in binary number system is:\n";
+
+for (c = 31; c >= 0; c--)
+{
+k = n >> c;
+/Right shift(Binary Divide by 2)/
+if (k & 1)//k is logically ANDed with 1
+cout<<"1";
+else
+cout<<"0";
+}
+
+return 0;
+}
+
+/*
+Output:
+Enter an integer in decimal number system: 24                                                                                 
+24in binary number system is: 00000000000000000000000000011000
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Binary to decimal
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int convertBinaryToDecimal(long long);
+
+int main()
+{
+long long n;
+cout << "Enter a binary number: ";
+cin >> n;
+cout << n << " in binary = " << convertBinaryToDecimal(n) << "in decimal";
+return 0;
+}
+
+int convertBinaryToDecimal(long long n)
+{
+int decimalNumber = 0, i = 0, remainder;
+while (n!=0)
+{
+remainder = n%10;
+n /= 10;
+decimalNumber += remainder*pow(2,i);
+++i;
+}
+return decimalNumber;
+}
+
+/*
+Output:
+Enter a binary number: 1111
+1111 in decimal = 15
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Binary to  octal
+
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int convertBinarytoOctal(long long);
+int main()
+{
+long long binaryNumber;
+cout << "Enter a binary number: ";
+cin >> binaryNumber;
+cout << binaryNumber << " in binary = " << convertBinarytoOctal(binaryNumber) << " in octal ";
+return 0;
+}
+
+int convertBinarytoOctal(long long binaryNumber)
+{
+int octalNumber = 0, decimalNumber = 0, i = 0;
+
+while(binaryNumber != 0)
+{
+decimalNumber += (binaryNumber%10) * pow(2,i);
+++i;
+binaryNumber/=10;
+}
+
+i = 1;
+while (decimalNumber != 0)
+{
+octalNumber += (decimalNumber % 8) * i;
+decimalNumber /= 8;
+i *= 10;
+}
+return octalNumber;
+}
+
+/*
+Output:
+Enter a binary number: 10001
+10001 in binary = 21 in octal
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Binary to hexa decimal
+
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int main()
+{
+int hex[1000];
+int i = 1, j = 0, rem, dec = 0, binaryNumber;
+cout << "\n\n Convert a binary number to hexadecimal number:\n";
+cout << "----------------------------------------------------\n";
+cout << " Input a binary number: ";
+cin>> binaryNumber;
+while (binaryNumber > 0)
+{
+rem = binaryNumber % 2;
+dec = dec + rem * i;
+i = i * 2;
+binaryNumber = binaryNumber / 10;
+}
+i = 0;
+while (dec != 0)
+{
+hex[i] = dec % 16;
+dec = dec / 16;
+i++;
+}
+cout<<" The hexadecimal value: ";
+for (j = i - 1; j >= 0; j--)
+{
+if (hex[j] > 9)
+{
+cout<<(char)(hex[j] + 55)<<"\n";
+}
+else
+{
+cout<<hex[j]<<"\n";
+}
+}
+}
+
+/*
+Output:
+Convert a binary number to hexadecimal number:                        
+----------------------------------------------------                   
+ Input a binary number: 1011                                           
+ The hexadecimal value: B
+*/
+
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+print string
+
+#include <iostream>
+using namespace std;
+int main()
+{
+char array[100];
+
+cout<<"Enter a string\n";
+cin>>array;
+/* %s is used to retrive string from user*/
+
+cout<<"You entered the string"<<array<<"\n";
+return 0;
+}
+
+/*
+Output:
+Enter a string codetoinvent
+You entered the string codetoinvent
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+length of a string using pointer
+
+#include <iostream>
+using namespace std;
+int string_ln(char*);
+
+int main()
+{
+char str[20];
+int length;
+
+cout<<"\nEnter any string :";
+gets(str);
+
+length = string_ln(str);
+cout<<"The length of the given string"<<str<<"is :"<<length;
+}
+
+int string_ln(char*p) /p=&str[0]/
+{
+int count = 0;
+while (*p != '\0') {
+count++;
+p++;
+}
+return count;
+}
+
+/*
+Output:
+Enter any string :codetoinvent                                                     
+The length of the given string codetoinventis :12
+*/
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+copy string
+
+#include <iostream>
+using namespace std;
+#include <string.h>
+
+main()
+{
+char source[] = "C program";
+char destination[50];
+
+strcpy(destination, source);
+/*strcpy will copy string from source to destination */
+
+cout<<"Source string:"<<source<<"\n";
+cout<<"Destination string:"<<destination<<"\n";
+
+return 0;
+}
+
+/*
+Output:
+Source string:C program                                                            
+Destination string:C program 
+*/
+
