@@ -1006,3 +1006,2034 @@ Source string:C program
 Destination string:C program 
 */
 
+
+--------------
+concatenate string
+
+#include <iostream>
+using namespace std;
+#include <string.h>
+
+int main()
+{
+char a[100], b[100];
+
+cout<<"Enter the first string\n";
+gets(a);
+
+cout<<"Enter the second string\n";
+gets(b);
+
+strcat(a,b);
+/strcat will append string b on string a/
+
+cout<<"String obtained on concatenation is"<<a<<"\n";
+
+return 0;
+}
+
+
+Output:
+
+nter the first string                                                             
+codeto                                                                             
+Enter the second string                                                            
+invent                                                                             
+String obtained on concatenation is codetoinvent 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+compare strings
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+int main()
+{
+char a[100], b[100];
+
+cout<<"Enter the first string\n";
+gets(a);
+
+cout<<"Enter the second string\n";
+gets(b);
+
+/strcmp(string, string) : returns 0 if strings are equal else strings are unequal/
+if( strcmp(a,b) == 0 )
+cout<<"Entered strings are equal.\n";
+else
+cout<<"Entered strings are not equal.\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter the first string                                                             
+code                                                                               
+Enter the second string                                                            
+coed                                                                               
+Entered strings are not equal.
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+string without string function
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main ()
+{
+string str1 = "Hello";
+string str2 = "World";
+string str3;
+int len ;
+
+// copy str1 into str3
+str3 = str1;
+cout << "str3 : " << str3 << endl;
+
+// concatenates str1 and str2
+str3 = str1 + str2;
+cout << "str1 + str2 : " << str3 << endl;
+
+// total lenghth of str3 after concatenation
+len = str3.size();
+cout << "str3.size() : " << len << endl;
+
+return 0;
+}
+
+
+Output:
+
+str3 : Hello
+str1 + str2 : HelloWorld
+str3.size() : 10
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+string length
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+int main()
+{
+char a[100];
+int length;
+cout<<"Enter a string to calculate it's length\n";
+gets(a);
+
+length = strlen(a);
+/* strlen(string) : function gives length of string*/
+
+cout<<"Length of entered string is ="<<length<<"\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter a string to calculate it's length
+codetoinvent
+Length of entered string is =12
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+reverse string
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+int main()
+{
+char arr[100];
+
+cout<<"Enter a string to reverse\n";
+gets(arr);
+
+strrev(arr);
+
+/*strrev(string) : reverses given sting */
+cout<<"Reverse of entered string is \n"<<arr<<"\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter a string to reverse
+program
+Reverse of entered string is
+margorp
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+extern storage class
+
+#include <iostream>
+//using namespace std;
+int count ;
+extern void write_extern();
+
+main()
+{
+count = 10;
+write_extern();
+}
+
+File2.cpp
+
+#include <iostream>
+
+extern int count;
+
+void write_extern(void)
+{
+std::cout << "Count is " << count << std::endl;
+}
+
+
+Output:
+
+Count is 10
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+current date
+
+#include <ctime>
+#include <iostream>
+using namespace std;
+
+int main() {
+time_t t = time(0); // get time now
+struct tm * now = localtime( & t );
+cout << "Current Date is : "
+cout << now->tm_mday << '-'<< (now->tm_mon + 1) << '-' << (now->tm_year + 1900) << endl;
+}
+
+
+Output:
+
+Current Date is : 17-1-2019
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+class template
+
+#include <iostream>
+#include <vector>
+#include <cstdlib>
+#include <string>
+#include <stdexcept>
+
+using namespace std;
+
+template <class T>
+class Stack {
+private:
+vector<T> elems; // elements
+
+public:
+void push(T const&); // push element
+void pop(); // pop element
+T top() const; // return top element
+bool empty() const{ // return true if empty.
+return elems.empty();
+}
+};
+
+template <class T>
+void Stack<T>::push (T const& elem)
+{
+// append copy of passed element
+elems.push_back(elem);
+}
+
+template <class T>
+void Stack<T>::pop ()
+{
+if (elems.empty()) {
+throw out_of_range("Stack<>::pop(): empty stack");
+}
+// remove last element
+elems.pop_back();
+}
+
+template <class T>
+T Stack<T>::top () const
+{
+if (elems.empty()) {
+throw out_of_range("Stack<>::top(): empty stack");
+}
+// return copy of last element
+return elems.back();
+}
+
+int main()
+{
+try {
+Stack<int> intStack; // stack of ints
+Stack<string> stringStack; // stack of strings
+
+// manipulate int stack
+intStack.push(7);
+cout << intStack.top() <<endl;
+
+// manipulate string stack
+stringStack.push("hello");
+cout << stringStack.top() << std::endl;
+stringStack.pop();
+stringStack.pop();
+}
+catch (exception const& ex) {
+cerr << "Exception: " << ex.what() <<endl;
+return -1;
+}
+}
+
+
+Output:
+
+7
+hello
+Exception: Stack<>::pop(): empty stack
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+check vowels
+
+#include <iostream>
+using namespace std;
+int main()
+{
+char ch;
+
+cout<<"Input a character\n";
+cin>>ch;
+
+switch(ch)
+{
+case 'a':
+case 'A':
+case 'e':
+case 'E':
+case 'i':
+case 'I':
+case 'o':
+case 'O':
+case 'u':
+case 'U':
+cout<<ch<<"is a vowel.\n";
+break;
+/*if ch matches any case then it prints & breaks the execution */
+default:
+cout<<ch<<"is not a vowel.\n";
+/*if the ch is not from the cases then prints ch is not a vowel */
+}
+return 0;
+}
+
+
+Output:
+
+Input a character                                                                  
+e                                                                                  
+e is a vowel.
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+character's frequency
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+int main()
+{
+char string[100];
+int c = 0, count[26] = {0};
+
+cout<<"Enter a string\n";
+gets(string);
+
+while ( string[c] != '\0' )
+{
+/* Considering characters from 'a' to 'z' only */
+
+if ( string[c] >= 'a' && string[c] <= 'z' )
+count[string[c]-'a']++;
+
+c++;
+}
+
+for ( c = 0 ; c < 26 ; c++ )
+{
+if( count[c] != 0 )
+cout<<c+'a'<<"occurs"<<count[c]<<" times in the entered string.\n";
+}
+
+return 0;
+}
+
+
+Output:
+
+Enter a string                                                                     
+codetoinvent                                                                       
+99occurs1 times in the entered string.                                             
+100occurs1 times in the entered string.                                            
+101occurs2 times in the entered string.                                            
+105occurs1 times in the entered string.                                            
+110occurs2 times in the entered string.                                            
+111occurs2 times in the entered string.                                            
+116occurs2 times in the entered string.                                            
+118occurs1 times in the entered string. 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+string to lowercase
+
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+int main()
+{
+char string[] = "CODETOINVENT";
+
+cout<<strlwr(string)<<"\n";
+/strlwr() will print string in LOWER case/
+
+return 0;
+}
+
+
+Output:
+
+CODETOINVENT
+codetoinvent
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+string to uppercase
+
+Upper Case
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+int main()
+{
+char string[] = "codetoinvent";
+
+cout<<strupr(string)<<"\n";
+/strupr() will print string in upper case/
+
+return 0;
+}
+
+
+Output:
+
+codetoinvent 
+CODETOINVENT
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+calculate percentage
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int s1, s2, s3, s4, s5, sum, total = 500;
+float per;
+cout<<"\nEnter marks of 5 subjects :";
+cin>>s1>>s2>>s3>>s4>>s5;
+
+sum = s1 + s2 + s3 + s4 + s5;
+cout<<"\nSum :"<<sum;
+
+per = (sum * 100)/500;
+/* percentage formula*/
+cout<<"\nPercentage :"<<per;
+}
+
+
+Output:
+
+Enter marks of 5 subjects :59                                                      
+23 57 89 90                                                                        
+                                                                                   
+Sum :318                                                                           
+Percentage :63
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+calculate gross salary
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int gross_salary, basic, da, ta;
+
+cout<<"Enter basic salary : ";
+cin>>basic;
+
+da = (10 * basic)/100;
+ta = (12 * basic)/100;
+
+gross_salary = basic + da + ta;
+cout<<"\nGross salary :"<<gross_salary;
+}
+
+
+Output:
+
+Enter basic salary : 8000                                                          
+                                                                                   
+Gross salary :9760
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+temperature coversion
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int from , to;
+float value;
+
+cout<<"Temperature Conversion\n";
+cout<<"Enter no of Unit to covert from : \n 1.celcius\n 2. Farenheit\n 3. Kelvin";
+cin>>from;
+
+cout<<"Enter no of Unit to covert to : \n 1.celcius\n 2. Farenheit\n 3. Kelvin";
+cin>>to;
+
+cout<<"Enter The value to convert: ";
+cin>>value;
+
+/converting given value from specified unit to Kelvin/
+switch(from) {
+case 1:
+value= value + 273.15; break;
+case 2:
+value= (value+459.67)*5/9; break;
+case 3: break;
+default: break;
+}
+
+/converting value from Kelvin to specified unit/
+switch(to) {
+case 1:
+value= value-273.15; break;
+case 2:
+value= value*9/5-459.67; break;
+case 3: break;
+default: break;
+}
+
+cout<<"Converted Value :"<< value;
+}
+
+
+Output:
+
+Temperature Conversion                                                             
+Enter no of Unit to covert from :                                                  
+ 1.celcius                                                                         
+ 2. Farenheit                                                                      
+ 3. Kelvin                                                                         
+2                                                                                  
+Enter no of Unit to covert to :                                                    
+ 1.celcius                                                                         
+ 2. Farenheit                                                                      
+ 3. Kelvin                                                                         
+1                                                                                  
+Enter The value to convert: 45                                                     
+Converted Value :7.22222
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+switch case
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+// local variable declaration:
+char grade = 'B';
+
+switch(grade)
+{
+case 'A' :
+cout << "Excellent!" << endl;
+break;
+case 'B' :
+cout << "Well done" << endl;
+break;
+case 'C' :
+cout << "Average" << endl;
+break;
+case 'D' :
+cout << "You passed" << endl;
+break;
+case 'E' :
+cout << "Better try again" << endl;
+break;
+default :
+cout << "Invalid grade" << endl;
+}
+cout << "Obtained Grade : " << grade << endl;
+
+return 0;
+}
+
+
+Output:
+
+Well done
+Obtained Grade : B
+
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Nested switch case
+
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+
+int a = 10;
+int b = 20;
+
+switch(a)
+{
+case 10:
+cout << " Outer Switch case " << endl;
+switch(b)
+{
+case 20:
+cout << " Inner Switch case " << endl;
+}
+}
+cout << " value of a is : " << a << endl;
+cout << " value of b is : " << b << endl;
+
+return 0;
+}
+
+
+Output:
+
+Outer Switch case
+Inner Switch case
+value of a is : 10
+value of b is : 20
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+static storage class
+
+#include <iostream>
+
+// Function declaration
+void func(void);
+
+static int count =5; //Global variable
+
+main()
+{
+while(count--)
+{
+func();
+}
+return 0;
+
+}
+// Function definition
+void func( void )
+{
+static int i = 5; // local static variable
+i++;
+std::cout << "i is " << i ;
+std::cout << " and count is " << count << std::endl;
+}
+
+
+Output:
+
+i is 6 and count is 4
+i is 7 and count is 3
+i is 8 and count is 2
+i is 9 and count is 1
+i is 10 and count is 0
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Namespace using directive
+
+#include <iostream>
+using namespace std;
+
+// first name space
+namespace first{
+void func(){
+cout << "Inside the first namespace" << endl;
+}
+}
+
+// second name space
+namespace second{
+void func(){
+cout << "Inside the second namespace" << endl;
+}
+}
+using namespace first;
+int main ()
+{
+
+// This calls function from first name space.
+func();
+
+return 0;
+}
+
+
+Output:
+
+Inside the first namespace
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+print pattern
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int row, c, n, temp;
+
+cout<<"Enter the number of rows in pyramid of stars you wish to see ";
+cin>>n;
+
+temp = n;
+
+for ( row = 1 ; row <= n ; row++ )
+{
+for ( c = 1 ; c < temp ; c++ )
+cout<<" ";
+/*Leaving spaces before printing * */
+temp--;
+
+for ( c = 1 ; c <= 2*row - 1 ; c++ )
+cout<<"*";
+/*Printing stars by calculating rows */
+
+cout<<"\n";
+/*moving to new line after printing one */
+
+}
+
+return 0;
+}
+
+Output:
+
+Enter the number of rows in pyramid of stars you wish to see                       
+6                                                                                  
+     *                                                                             
+    *                                                                            
+   ***                                                                           
+  ***                                                                          
+ ***                                                                         
+***** 
+
+Diamond pattern
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int n, c, k, space = 1;
+
+cout<<"Enter number of rows\n";
+cin>>n;
+
+space = n - 1;
+/*here we will divide diamond in 2 parts upper and lower */
+
+/printing upper part/
+for (k = 1; k <= n; k++)
+{
+for (c = 1; c <= space; c++)
+cout<<" ";
+/*leaving space before printing * */
+space--;
+
+for (c = 1; c <= 2*k-1; c++)
+cout<<"*";
+/*printing * by calculating row no */
+
+cout<<"\n";
+/*moving to new line after printing one */
+
+}
+
+space = 1;
+
+/*Printing lower part */
+for (k = 1; k <= n - 1; k++)
+{
+for (c = 1; c <= space; c++)
+cout<<" ";
+
+space++;
+
+for (c = 1 ; c <= 2*(n-k)-1; c++)
+cout<<"*";
+
+cout<<"\n";
+}
+
+return 0;
+}
+
+
+Output:
+
+Enter number of rows                                                               
+7                                                                                  
+      *                                                                            
+     *                                                                           
+    ***                                                                          
+   ***                                                                         
+  ***                                                                        
+ *****                                                                       
+*****                                                                      
+ *****                                                                       
+  ***                                                                        
+   ***                                                                         
+    ***                                                                          
+     *                                                                           
+      *  
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+destructor
+
+#include <iostream>
+
+using namespace std;
+
+class Cube
+{
+public:
+void setLength( double len );
+double getLength( void );
+Cube(); // Constructor declaration
+~Cube(); // Destructor declaration
+
+private:
+double length;
+};
+
+// definitions of constructor
+Cube::Cube(void)
+{
+cout << "Object is being created" << endl;
+}
+
+//defination of Destructor
+Cube::~Cube(void)
+{
+cout << "Object is being deleted" << endl;
+}
+
+//defination of other member functions
+void Cube::setLength( double len )
+{
+length = len;
+}
+
+double Cube::getLength( void )
+{
+return length;
+}
+// Main function
+int main( )
+{
+Cube C;
+
+// set length of Cube
+C.setLength(5.0);
+cout << "Length of Cube : " << C.getLength() <<endl;
+
+return 0;
+}
+
+
+Output:
+
+Object is being created
+Length of Cube : 5
+Object is being deleted
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+deleting vowels
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+int check_vowel(char);
+
+int main()
+{
+char s[100], t[100];
+int i, j = 0;
+
+cout<<"Enter a string to delete vowels\n";
+gets(s);
+
+/* In the program we create a new string and process entered string character by character, and if a vowel is found it is not added to new string otherwise the character is added to new string, after the string ends we copy the new string into original string*/
+
+for(i = 0; s[i] != '\0'; i++) {
+if(check_vowel(s[i]) == 0) {
+/* not a vowel */
+t[j] = s[i];
+j++
+; }
+}
+
+t[j] = '\0';
+
+strcpy(s, t);
+/* We are changing initial string */
+cout<<"String after deleting vowels:"<< s<<"\n";
+
+return 0;
+}
+int check_vowel(char c)
+{
+switch(c) {
+case 'a':
+case 'A':
+case 'e':
+case 'E':
+case 'i':
+case 'I':
+case 'o':
+case 'O':
+case 'u':
+case 'U':
+return 1;
+default:
+return 0;
+}
+}
+
+
+Output:
+
+Enter a string to delete vowels                                                    
+codetoinvent                                                                       
+String after deleting vowels:cdtnvnt 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Default value of parameter
+
+#include <iostream>
+using namespace std;
+
+int add(int a, int b=20) //here default value of b is given
+{
+int result;
+
+result = a + b;
+
+return (result);
+}
+
+int main ()
+{
+int a = 5;
+int b = 10;
+int result;
+
+// both values are passed to function
+result = add(a, b);
+cout << "Total value is :" << result << endl;
+
+// only one value is passed
+result = add(a);
+cout << "Total value is :" << result << endl;
+
+return 0;
+}
+
+
+Output:
+
+Total value is :15
+Total value is :25
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+#define macro
+
+#include <iostream>
+using namespace std;
+#define PI 3.14159
+
+int main ()
+{
+cout << "Value of PI :" << PI << endl;
+return 0;
+}
+<
+
+Output:
+
+Value of PI :3.14159
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Odd or even
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int n;
+
+cout<<"Enter an integer\n";
+cin>>n;
+
+/if n is completely divisible by 2 then prints even otherwise n is odd/
+if ( n%2 == 0 )
+cout<<"Even\n";
+else
+cout<<"Odd\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter an integer
+10
+Even
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Exception handling
+
+#include <iostream>
+using namespace std;
+
+double division(int a, int b)
+{
+if( b == 0 )
+{
+throw "Division by zero Exception!!!";
+}
+return (a/b);
+}
+
+int main ()
+{
+int x = 50;
+int y = 0;
+double z = 0;
+
+try {
+z = division(x, y);
+cout << z << endl;
+}catch (const char* msg) {
+cerr << msg << endl;
+}
+
+return 0;
+}
+
+
+Output:
+
+Division by zero Exception!!!
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+simple structure example
+
+#include <iostream>
+#include <cstring>
+
+using namespace std;
+
+struct Student
+{
+char name[50];
+char college[50];
+char address[100];
+int student_id;
+};
+
+int main( )
+{
+struct Student student1; // Declare student1 of type Student
+struct Student student2; // Declare student2 of type Student
+struct Student student3; // Declare student3 of type Student
+
+// Student 1 specification
+strcpy( student1.name, "A. B. C.");
+strcpy( student1.college, "VJTI");
+strcpy( student1.address, "Dadar");
+student1.student_id = 200043;
+
+// student 2 specification
+strcpy( student2.name, "D. E. F. ");
+strcpy( student2.college, "SPIT");
+strcpy( student2.address, "Mahim");
+student2.student_id = 200034;
+
+// student 3 specification
+strcpy( student3.name, "P. Q. R. ");
+strcpy( student3.college, "VIT");
+strcpy( student3.address, "Andheri");
+student2.student_id = 200061;
+
+// Print student1 info
+cout << "Student 1 name : " << student1.name <<endl;
+cout << "Student 1 college : " << student1.college <<endl;
+cout << "Student 1 address : " << student1.address <<endl;
+cout << "Student 1 id : " << student1.student_id <<endl;
+
+cout <<"\n\n";
+// Print Student2 info
+cout << "Student 2 name : " << student2.name <<endl;
+cout << "Student 2 college : " << student2.college <<endl;
+cout << "Student 2 address : " << student2.address <<endl;
+cout << "Student 2 id : " << student2.student_id <<endl;
+
+cout <<"\n\n";
+// Print Student3 info
+cout << "Student 3 name : " << student3.name <<endl;
+cout << "Student 3 college : " << student3.college <<endl;
+cout << "Student 3 address : " << student3.address <<endl;
+cout << "Student 3 id : " << student3.student_id <<endl;
+return 0;
+}
+
+
+Output:
+
+Student 1 name : Malik
+Student 1 college :matrusri
+Student 1 address : santosh nagar
+Student 1  id : 089
+Student 2 name : aayush
+Student 2 college :matrusri
+Student 2 address : santosh nagar
+Student 2 id : 062
+Student 3 name : chetan
+Student 3 college :matrusri
+Student 3 address : santosh nagar
+Student 3  id : 098
+
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+floyd's triangle
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int n, i, c, a = 1;
+
+cout<<"Enter the number of rows of Floyd's triangle to print\n";
+cin>>n;
+
+for (i = 1; i < n; i++)
+{
+for (c = 1; c < i; c++)
+{
+cout<<a;
+a++;
+}
+cout<<"\n";
+/**/
+}
+
+return 0;
+}
+
+
+Output:
+
+Enter the number of rows of Floyd's triangle to print                              
+10                                                                                 
+                                                                                   
+1                                                                                  
+23                                                                                 
+456                                                                                
+78910                                                                              
+1112131415                                                                         
+161718192021                                                                       
+22232425262728                                                                     
+2930313233343536 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+palindrome
+
+#include <iostream>
+#include <string.h>
+using namespace std;
+int main()
+{
+char a[100], b[100];
+
+cout<<"Enter the string to check if it is a palindrome\n";
+gets(a);
+
+strcpy(b,a);
+strrev(b);
+/*reversing given string and comparing
+if reverse and given are same then palindrome*/
+
+if( strcmp(a,b) == 0 )
+cout<<"Entered string is a palindrome.\n";
+else
+cout<<"Entered string is not a palindrome.\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter the string to check if it is a palindrome
+mam
+Entered string is a palindrome.
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+file handling
+
+#include <fstream>
+#include <iostream>
+using namespace std;
+
+int main ()
+{
+
+char data[100];
+
+// open a file in write mode.
+ofstream outfile;
+outfile.open("afile.dat");
+
+cout << "File is in Write mode" << endl;
+cout << "Please enter your name: ";
+cin.getline(data, 100);
+
+// write inputted data into the file.
+outfile << data << endl;
+
+cout << "Please enter your age: ";
+cin >> data;
+//input is ignored
+cin.ignore();
+
+// again write inputted data into the file.
+outfile << data << endl;
+
+cout << "Please enter your Education: ";
+cin.getline(data, 100);
+outfile << data << endl;
+
+// close the opened file.
+outfile.close();
+
+// open a file in read mode.
+ifstream infile;
+infile.open("afile.dat");
+
+cout << "File is in Read mode" << endl;
+infile >> data;
+
+// write the data at the screen.
+cout << data << endl;
+
+// again read the data from the file and display it.
+infile >> data;
+cout << data << endl;
+
+infile >> data;
+cout << data << endl;
+// close the opened file.
+infile.close();
+
+return 0;
+}
+
+
+Output:
+
+File is in Write mode
+Please enter your name: malik Please enter your age: 19
+Please enter your Education: cse
+File is in Read mode
+malik
+19
+cse
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+Global & local variables
+
+#include <iostream>
+using namespace std;
+
+// Global variable declaration:
+int a = 20;
+
+int main ()
+{
+// Local variable declaration:
+int a = 10;
+
+cout << a;
+
+return 0;
+}
+
+
+Output:
+
+10
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+greatest of 3 num
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int a,b,c;
+
+cout<<"enter any three numbers:\n";
+cin>>a>>b>>c;
+if(a>b&&a>c)
+/if a is greater than b & c/
+cout<<"greatest number is:"<<a;
+else if(b>c)
+/if not a then if b is greater than c/
+cout<<"greatest number is:"<<b;
+else
+/if a & b are not greater/
+cout<<"greatest number is:"<<c;
+}
+
+
+Output:
+
+enter any three numbers: 5 6 7
+greatest number is: 7
+
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+random numbers
+
+#include <iostream>
+#include <stdlib.h>
+using namespace std;
+int main() {
+int c, n;
+
+/rand() is used to get random numbers/
+
+cout<<"Ten random numbers in 1 to 100\n";
+
+for (c = 1; c <= 10; c++) {
+n = rand()%100 + 1;
+/*rand()%100 gives random value in between 0 to 99 */
+cout<<n<<"\n";
+}
+
+return 0;
+}
+
+
+Output:
+
+Ten random numbers in 1 to 100                                                     
+84                                                                                 
+87                                                                                 
+78                                                                                 
+16                                                                                 
+94                                                                                 
+36                                                                                 
+87                                                                                 
+93                                                                                 
+50                                                                                 
+22
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+protected member
+
+#include <iostream>
+using namespace std;
+
+class Cube //Base class
+{
+protected:
+double length;
+};
+
+class SmallCube:Cube // SmallCube is the derived class.
+{
+public:
+void setSmallLength( double len );
+double getSmallLength( void );
+};
+
+// Member Function of Derived Class (SmallCube)
+double SmallCube::getSmallLength(void)
+{
+return length ;
+}
+
+void SmallCube::setSmallLength( double len )
+{
+length = len;
+}
+
+// Main function
+int main( )
+{
+SmallCube C;
+
+// set Cube Length using member function
+C.setSmallLength(5.0);
+cout << "Length of Cube : "<< C.getSmallLength() << endl;
+
+return 0;
+}
+
+
+Output:
+
+Length of Cube :  5
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+pascal's triangle
+
+#include <iostream>
+using namespace std;
+long factorial(int);
+
+int main()
+{
+int i, n, c;
+
+cout<<"Enter the number of rows you wish to see in pascal triangle\n";
+cin>>n;
+
+for ( i = 0 ; i < n ; i++ )
+{
+for ( c = 0 ; c <= ( n - i - 2 ) ; c++ )
+cout<<" ";
+
+for( c = 0 ; c <= i ; c++ )
+cout<<factorial(i)/(factorial(c)*factorial(i-c));
+
+cout<<"\n";
+}
+
+return 0;
+}
+
+long factorial(int n)
+{
+int c;
+long result = 1;
+
+for( c = 1; c <= n; c++ )
+result = result*c;
+
+return ( result );
+}
+
+
+Output:
+
+Enter the number of rows you wish to see in pascal triangle                        
+6                                                                                  
+     1                                                                             
+    11                                                                             
+   121                                                                             
+  1331                                                                             
+ 14641                                                                             
+15101051 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+int datatype
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int a;
+
+cout<<"Enter an integer\n";
+cin>>a;
+//takes an integer from user
+
+cout<<"Integer that you have entered is"<<a<<"\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter an integer
+10
+Integer that you have entered is 10
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+prime number
+
+#include <iostream>
+using namespace std;
+int check_prime(int);
+
+main()
+{
+int i, n, result;
+
+cout<<"Enter the number of prime numbers required\n";
+cin>>n;
+cout<<"First"<<n<<"prime numbers are :\n";
+
+for(i=0; i < n; i++){
+result = check_prime(i);
+/if i is prime then it will return 1/
+
+if ( result == 1 )
+cout<<i<<"\n";
+}
+return 0;
+}
+
+int check_prime(int a)
+{
+int c;
+/starting from 2, if no is completely divisible by any no then it is not prime/
+for ( c = 2 ; c <= a - 1 ; c++ )
+{
+if ( a%c == 0 )
+return 0;
+}
+if ( c == a )
+return 1;
+}
+
+
+Output:
+
+Enter the number of prime numbers required                                         
+10                                                                                 
+First10prime numbers are :                                                         
+2                                                                                  
+3                                                                                  
+5                                                                                  
+7 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+pointer to class
+
+#include <iostream>
+
+using namespace std;
+
+class Cube
+{
+public:
+// Constructor definition
+Cube(double l=2.0, double b=2.0, double h=2.0)
+{
+cout <<"Constructor called." << endl;
+length = l;
+breadth = b;
+height = h;
+}
+double Volume()
+{
+return length * breadth * height;
+}
+private:
+double length; // Length of a Cube
+double breadth; // Breadth of a Cube
+double height; // Height of a Cube
+};
+
+int main(void)
+{
+Cube C1(2.5, 3.0, 1.8); // Declare C1
+Cube C2(4.0, 1.5, 2.4); // Declare C2
+Cube *ptrC; // Declare pointer to a class.
+
+// Save the address of first object
+ptrC = &C1;
+
+// Now try to access a member using member access operator
+cout << "Volume of Cube 1: " << ptrC->Volume() << endl;
+
+// Save the address of first object
+ptrC = &C2;
+
+// Now try to access a member using member access operator
+cout << "Volume of Cube 2: " << ptrC->Volume() << endl;
+
+return 0;
+}
+
+
+Output:
+
+Constructor called.
+Constructor called.
+Volume of Cube 1: 13.5
+Volume of Cube 2: 14.4
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+null pointer
+
+#include <iostream>
+
+using namespace std;
+
+int main ()
+{
+int *ptr = NULL;
+
+cout << "The value of ptr is " << ptr ;
+
+return 0;
+}
+
+
+Output:
+
+The value of ptr is 0
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+min number using macro
+
+#include <iostream>
+using namespace std;
+
+#define MIN(a,b) (((a)<(b)) ? a : b)
+
+int main ()
+{
+int x, y;
+x = 40;
+y = 15;
+cout <<"The Minimum number is " << MIN(x, y) << endl;
+
+return 0;
+}
+
+
+Output:
+
+The Minimum number is 15
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+leap year
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int year;
+
+cout<<"Enter a year to check if it is a leap year\n";
+cin>>year;
+
+if ( year%400 == 0)
+cout<<year<<"is a leap year.\n";
+else if ( year%100 == 0)
+cout<<year<<"is not a leap year.\n";
+else if ( year%4 == 0 )
+cout<<year<<"is a leap year.\n";
+else
+cout<<year<<"is not a leap year.\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter a year to check if it is a leap year                                         
+2019                                                                               
+2019is not a leap year.
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+this pointer
+
+#include <iostream>
+
+using namespace std;
+
+class Cube
+{
+public:
+// Constructor definition
+Cube(double l=5.0, double b=5.0, double h=5.0)
+{
+cout <<"Constructor called." << endl;
+length = l;
+breadth = b;
+height = h;
+// Increase every time object is created
+objectCount++;
+}
+double Volume()
+{
+return length * breadth * height;
+}
+int compare(Cube C)
+{
+return this->Volume() > C.Volume();
+}
+private:
+double length; // Length of a Cube
+double breadth; // Breadth of a Cube
+double height; // Height of a Cube
+};
+
+int main(void)
+{
+Cube C1(2.0, 1.2, 1.8); // Declare C1
+Cube C2(3.5, 2.5, 1.9); // Declare C2
+
+if(C1.compare(C2))
+{
+cout << "Cube 2 is smaller than Cube 1" <<endl;
+}
+else
+{
+cout << "Cube 2 is equal to or larger than Cube 1" <<endl;
+}
+return 0;
+}
+
+
+Output:
+
+Constructor called.
+Constructor called.
+Cube 2 is equal to or larger than Cube 1
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+swapping two numbers
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int x, y, temp;
+
+cout<<"Enter the value of x and y\n";
+cin>>x>>y;
+
+cout<<"Before Swapping\nx =" <<x<<"\ny = "<<y<<"\n";
+
+temp = x;
+x = y;
+y = temp;
+/*using temp to swap
+storing x to temp and y to x then moving temp to y*/
+
+cout<<"After Swapping\nx = "<<x<<"\ny = "<<y<<"\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter the value of x and y                                                         
+4 6                                                                                
+Before Swapping                                                                    
+x =4                                                                               
+y = 6                                                                              
+After Swapping                                                                     
+x = 6                                                                              
+y = 4 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+swap 2 num without 3rd variable
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int a, b;
+cout<<"\nEnter value for num1 & num2 :";
+cin>>a>>b;
+
+a = a + b;
+b = a - b;
+a = a - b;
+
+cout<<"\nAfter swapping value of a :"<<a;
+cout<<"\nAfter swapping value of b :"<<b;
+return (0);
+}
+
+
+Output:
+
+Enter value for num1 & num2 :5 7                                                   
+                                                                                   
+After swapping value of a :7                                                       
+After swapping value of b :5
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+simple interest
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int amount, rate, time, ans;
+
+cout<<"\nEnter Principal Amount :";
+cin>>amount;
+
+cout<<"\nEnter Rate of Interest :";
+cin>>rate;
+
+cout<<"\nEnter Period of Time :";
+cin>>time;
+
+ans = (amount * rate * time)/100;
+/Simple interest formula/
+cout<<"\nSimple Interest :"<<ans;
+}
+
+
+Output:
+
+Enter Principal Amount :1000                                                       
+                                                                                   
+Enter Rate of Interest :10                                                         
+                                                                                   
+Enter Period of Time :3                                                            
+                                                                                   
+Simple Interest :300
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+remove space
+
+#include <iostream>
+using namespace std;
+int main()
+{
+char text[100], blank[100];
+int c = 0, d = 0;
+
+cout<<"Enter some text\n";
+gets(text);
+
+while (text[c] != '\0')
+{
+/if two consecutive spaces found then it will not be added to new string/
+if (!(text[c] == ' ' && text[c+1] == ' ')) {
+blank[d] = text[c];
+d++;
+}
+c++;
+}
+
+blank[d] = '\0';
+
+cout<<"Text after removing blanks\n"<<blank<<"\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter some text                                                                    
+hello_  codetoinvent                                                               
+Text after removing blanks                                                         
+hello_ codetoinvent 
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+reverse number
+
+#include <iostream>
+using namespace std;
+int main()
+{
+int n, reverse = 0;
+
+cout<<"Enter a number to reverse\n";
+cin>>n;
+
+while (n != 0)
+{
+reverse = reverse * 10;
+reverse = reverse + n%10;
+n = n/10;
+}
+/*taking unit place digit of no and moving to reverse
+Dividing the no to discard unit place digit*/
+
+cout<<"Reverse of entered number is ="<<reverse<<"\n";
+
+return 0;
+}
+
+
+Output:
+
+Enter a number to reverse
+123
+Reverse of entered number is = 321
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+reference as return value
+
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int arr[] = {10,20,30,40,50};
+
+int& setValues( int i )
+{
+return arr[i]; // return a reference
+}
+
+int main ()
+{
+
+cout << "Before changing values " << endl;
+for ( int i = 0; i < 5; i++ )
+{
+cout << "arr[" << i << "] = ";
+cout << arr[i] << endl;
+}
+
+setValues(1) = 60; // change 2nd element
+setValues(3) = 70; // change 4th element
+
+cout << "After changing values " << endl;
+for ( int i = 0; i < 5; i++ )
+{
+cout << "arr[" << i << "] = ";
+cout << arr[i] << endl;
+}
+return 0;
+}
+
+
+Output:
+
+Before changing values
+arr[0] = 10
+arr[1] = 20
+arr[2] = 30
+arr[3] = 40
+arr[4] = 50
+After changing values
+arr[0] = 10
+arr[1] = 60
+arr[2] = 30
+arr[3] = 70
+arr[4] = 50
+
+Download this app for more programs and tutorials
+https://play.google.com/store/apps/details?id=com.codetoinvent.malik.cplusplus
+date and time
+
+#include <iostream>
+#include <ctime>
+
+using namespace std;
+
+int main( )
+{
+// current date/time based on current system
+time_t now = time(0);
+
+// convert now to string form
+char* dt = ctime(&now);
+
+cout << "The local date and time is: " << dt << endl;
+
+// convert now to tm struct for UTC
+tm *gmtm = gmtime(&now);
+dt = asctime(gmtm);
+cout << "The UTC date and time is:"<< dt << endl;
+}
+
+
+Output:
+
+The local date and time is: Thu Jan 17 16:38:02 2019
+The UTC date and time is: Thu Jan 17 11:08:02 2019
+
+
+
+
+
+
+
+
+
+
