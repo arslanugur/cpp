@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 int main()
@@ -24,9 +23,7 @@ int main()
     return 0;
 }
 
-
-My lesson highlights! Check it out on your phone in Programming Hub: https://goo.gl/D2iETN
-Accessing 2-D Array Elements
+/*Output:
 a[0][0]: 0
 a[0][1]: 0
 a[1][0]: 1
@@ -36,7 +33,9 @@ a[2][1]: 4
 a[3][0]: 3
 a[3][1]: 6
 a[4][0]: 4
-a[4][1]: 8
+a[4][1]: 8*/
+
+
 Array element swapping
 #include<iostream>
 
