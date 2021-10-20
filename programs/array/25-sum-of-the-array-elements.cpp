@@ -29,6 +29,7 @@ int main()
 }
 
 /*
+Output:
 Enter size of array : 5
 
 Enter array elements : 1
