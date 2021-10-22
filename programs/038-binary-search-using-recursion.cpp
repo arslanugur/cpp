@@ -50,3 +50,4 @@ Enter the elements of the array:5 3 6 2
 Enter the number to be search:3
 Number is found.
 */
+
