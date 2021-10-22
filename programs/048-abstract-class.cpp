@@ -66,3 +66,4 @@ Area of Rectangle : 60
 Area of Triangle : 14
 */
 
+
