@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 int main()
 {
 int c, first, last, middle, n, search, array[100];
