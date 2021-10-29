@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 int main()
 {
 int a[10],i,n,m,c,l,u;
