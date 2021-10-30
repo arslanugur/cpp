@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 // Merges two subarrays of arr[]. 
 // First subarray is arr[l..m] 
 // Second subarray is arr[m+1..r] 
@@ -100,9 +101,11 @@ printArray(arr, arr_size);
 return 0;
 
 }
+
 /*
 Output:
 Given array is 1 11 3 5 6 7
-Sorted array is 1 3 5 6 7 11 */
+Sorted array is 1 3 5 6 7 11 
+*/
 
 
