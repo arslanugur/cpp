@@ -29,7 +29,9 @@ cout << a[i][j]<< endl;
 
 return 0;
 }
-/*Output:
+
+/*
+Output:
 Enter the number of rows: 2
 Enter the number of columns: 3
 Enter the Elements in Table
@@ -39,5 +41,6 @@ a[0][1]: 2
 a[0][2]: 3
 a[1][0]: 4
 a[1][1]: 5
-a[1][2]: 6 */
+a[1][2]: 6 
+*/
 
