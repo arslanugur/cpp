@@ -1,5 +1,6 @@
 #include <iostream>
 using namespace std;
+
 int main()
 {
 int n, array[1000], c, d, t;
@@ -33,6 +34,7 @@ cout<<array[c]<<"\n";
 
 return 0;
 }
+
 /*
 Output:
 Enter number of elements: 5                                                                                  
@@ -42,6 +44,7 @@ Sorted list in ascending order:
 2                                                                                  
 4                                                                                  
 11                                                                                 
-66*/ 
+66
+*/ 
 
 
