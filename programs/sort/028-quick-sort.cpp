@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+
 // A utility function to swap two elements
 void swap(int* a, int* b) {
 int t = *a;
