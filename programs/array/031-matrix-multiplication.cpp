@@ -67,6 +67,7 @@ Enter the elements of second matrix
 2 2                                                                                
 difference of entered matrices:-                                                          
 4      4                                                                          
-4      4*/ 
+4      4
+*/ 
 
 
