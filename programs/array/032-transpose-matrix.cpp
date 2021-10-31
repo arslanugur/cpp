@@ -42,5 +42,6 @@ Enter the elements of matrix
 3 4                                                                                
 Transpose of entered matrix :-                                                     
 1       3                                                                          
-2       4 */
+2       4 
+*/
 
