@@ -1,20 +1,20 @@
 Logical Operators
       //Use logical operators to combine conditional statements and return true or false. 
 /*
-Operator| Name of Operator | Form
------------------------------------
-&&	    | AND Operator     | y && y
-||     	| OR Operator	     | x || y
-!	      | NOT Operator     |	!x
+Operator    | Name of Operator      | Form
+--------------------------------------------
+&&          | AND Operator          | y && y
+||          | OR Operator           | x || y
+!	      | NOT Operator          | !x
 
       //The AND operator works the following way:
 
-Left Operand | Right Operand | Result
---------------------------------------
-  false      |  false        | false
-  false      |  true         | false
-  true       |  false        | false
-  true	     |  true         | true
+Left Operand      | Right Operand   | Result
+--------------------------------------------
+  false           |  false          | false
+  false           |  true           | false
+  true            |  false          | false
+  true            |  true           | true
 */
   
       //In the AND operator, both operands must be true for the entire expression to be true.
