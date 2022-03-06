@@ -5,7 +5,7 @@ Operator    | Name of Operator      | Form
 --------------------------------------------
 &&          | AND Operator          | y && y
 ||          | OR Operator           | x || y
-!	      | NOT Operator          | !x
+!           | NOT Operator          | !x
 
       //The AND operator works the following way:
 
