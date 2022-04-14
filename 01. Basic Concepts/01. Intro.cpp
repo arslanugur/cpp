@@ -83,4 +83,8 @@ cout<<"This " "is"   " awesome!";
 // This also means that you can actually define your own namespace within the program and provide your own space for cin, cout etc.
 
 
-https://www.sololearn.com/learning/1051/1602/10193/2 comments
+// Namespace just a way to simplifay the coding method: 
+// For example: 
+// (without using namespace)                      std::cout << "Hi!"; std::cout << std::endl; 
+// (with using namespace)         using namespace std; cout << "Hi!"; cout << endl;               //the output would be the same.
+  
