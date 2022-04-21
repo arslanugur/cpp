@@ -1,23 +1,60 @@
-
-// Problem: LinkedIn Interview Challenge: String
-// Gİven a list of words followed by two words, find the minimum distance between the given two words.
-// * Here distance is the difference in indices between the given words in the list of words.
-//  Example: I/P: s = {"the", "quick", "brown", "fox", "quick"}
-//                word1="the"   word2="fox"
-//           O/P: 3
-...
+// 92th
+// Amazon Interview Challenge: - Unique Paths
 
 
-// 94th Problem: Facebook Interview Challenge: : Array
+// 93th
+// Amazon Interview Challenge: Array - Subset Sums
+// Given an integer array arr of N integers, return the sums of all subsets in it.
+// Example: I/P: N=3, arr={5,2,1}
+//          O/P: 0 1 2 3 4 5 6 7 8
+vector<int> ans;
+void helper(vector<int> &arr, int N, int i=0, int sum=0){
+  if(i==N){
+    ans.push_back(sum);
+    return;
+  }
+  helper(arr, N, i+1, sum);
+  helper(arr, N, i+1, sum + arr[i]);
+  return;
+}
+
+vector<int> subsetSums(vector<int> arr, int N){
+  helper(arr, N);
+  return ans;
+}
+
+
+
+
+// 94th
+// Facebook Interview Challenge: Array - Pair with given sum
 // Given two unsorted arrays A of size N and B of size M of distinct elements, find all pairs from both arrays whose sum is equal to X.
 // Example: I/P:  A[] = {1,2,4,5,7}
 //                B[] = {5,6,3,4,8}
 //                x=9
 //          O/P:  (1,8),(4,5),(5,4)
-vector<pair<int, int>> allPairs(int A[], int)  
+vector<pair<int, int>> allPairs(int A[], int B[], int N, int M, int X)
+{
+  vector<pair<int, int>> ans;
+  unordered_set<int> s;
+  for (int i = 0; i < M; i++)
+    s.insert(B[i]);
+  
+  for (int j=0; j<N; j++){
+    if (s.find(X-A[j]) != s.end()){
+      ans.push_back({A[j], X-A[j]});
+    }
+  }
+  sort(ans.begin(), ans.end());
+  return ans;
+}
+
+
   
   
-// Problem: Amazon Interview Challenge: Repeating Element: Array
+  
+// 95th
+// Amazon Interview Challenge: Array - Repeating Element
 // Given an array arr[] of size n, find the first repeating element
 // * The element should occurs more than once
 // * The index of its first occurrence should be the smallest.
@@ -36,7 +73,8 @@ int firstRepeated(int arr[], int n) {
 
 
 
-// Problem: Microsoft Interview Challenge: Search in an Array
+// 96th
+// Microsoft Interview Challenge: Array - Search in an Array
 // Given an array A of N distinct elements and it is rotated at some point, given an element key.
 // Find the index of the given element key in the array A.
 //  Example: I/P: n = 9, A[]={5,6,7,8,9,10,1,2,3}, key = 10
@@ -62,7 +100,17 @@ int search(int arr[], int l, int h, int key){
 
 
 
-
+// 97th
+// LinkedIn Interview Challenge: Strings - 
+// Gİven a list of words followed by two words, find the minimum distance between the given two words.
+// * Here distance is the difference in indices between the given words in the list of words.
+//  Example: I/P: s = {"the", "quick", "brown", "fox", "quick"}
+//                word1="the"   word2="fox"
+//           O/P: 3
+...
+  
+  
+  
 
 
 // Problem: Meta and Microsoft Interview
