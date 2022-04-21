@@ -1,8 +1,57 @@
-// 92th
-// Amazon Interview Challenge: - Unique Paths
+// 90th
+// Microsoft Interview Challenge: - Max Product Subarray
 
 
-// 93th
+// 91st
+// Zoho Interview Challenge: Array - Union of two arrays
+// Given two arrays a[] and b[] of size n and m. Find the count of union elements of the two arrays.
+// Example: I/P: n=5, a[] = {1,2,3,4,5}
+//               n=3, b[] = {1,2,3}
+//          O/P: 5
+//                * 1,2,3,4,5 are the elements which comes in the union set of both arrays. So count is 5.    
+int doUnion(int a[], int n, int b[], int m){
+  unordered_map<inti int> um;
+  for(int i=0; i<n; i++){
+    if(um.find(a[i]) == um.end())
+      um[b[i]]++;
+  }
+  for(int i=0; i<m; i++){
+    if(um.find(b[i]) == um.end())
+      um[b[i]]++;
+  }
+  
+  int cnt=0;
+  for(auto it = um.begin(); it!=um.end(); it++){
+    cnt++;
+  }
+  return cnt;
+}
+
+
+
+// 92nd
+// Amazon Interview Challenge: Array - Unique Paths
+// Given a m x n grid, count all the possible paths from top left to bottom right corner of the grid.
+// * From each cell you can either move to right or down
+// * Top left corner (grid[0][0]), bottom right corner (grid[m-1][n-1])
+// Example: I/P: M = 3 and N = 3
+//          O/P: 6
+long long countpath(int i, int j, int m, int n){
+  if(i==m-1 || j == n-1)
+    return 1;
+  
+  int a = countpath(i+1, j, m, n);
+  int b = countpath(i, j+1, m, n);
+  return a + b;
+}
+
+long numberOfPaths(int m, int n){
+  return countpath(0, 0, m, n);
+}
+
+
+
+// 93rd
 // Amazon Interview Challenge: Array - Subset Sums
 // Given an integer array arr of N integers, return the sums of all subsets in it.
 // Example: I/P: N=3, arr={5,2,1}
