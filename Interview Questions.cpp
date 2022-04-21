@@ -8,8 +8,15 @@
 ...
 
 
-
-
+// 94th Problem: Facebook Interview Challenge: : Array
+// Given two unsorted arrays A of size N and B of size M of distinct elements, find all pairs from both arrays whose sum is equal to X.
+// Example: I/P:  A[] = {1,2,4,5,7}
+//                B[] = {5,6,3,4,8}
+//                x=9
+//          O/P:  (1,8),(4,5),(5,4)
+vector<pair<int, int>> allPairs(int A[], int)  
+  
+  
 // Problem: Amazon Interview Challenge: Repeating Element: Array
 // Given an array arr[] of size n, find the first repeating element
 // * The element should occurs more than once
