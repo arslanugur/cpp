@@ -1,5 +1,102 @@
+// 86th
+// Amazon Interview Challenge: Array - Find Transition Point
+
+
+
+
+
+// 87th
+// Microsoft Interview Challenge: Array - Duplicate Number
+// Given an array of integers nums containing n+1 integers where each integer is in the range [1,n] inclusive.
+// There is only one repeated number in nums, return this repeated number.
+// Example: I/P: nums= [1,3,4,2,2]
+//          O/P: 2
+int findDuplicate(vector<int> nums) {
+  int ans = 0;
+  for(int i = 0; i<nums.size(); i++){
+    int ind = abs(nums[i]);
+    if(nums[ind-1] < 0)
+      return abs(nums[i]);
+    else
+      nums[ind-1] = -1*nums[ind-1];
+  }
+  return -1;
+}
+
+
+// 88th
+// Adobe Interview Challenge: Array - Equilibrium Point
+// Given an array A of n positive numbers. Find the first Equilibrium Point in the array.
+// * Equilibrium Point in an array is a position such that the sum of elements before it is equal to the sum of elements after it.
+// * Return -1 if no such point exists
+// Example: I/P: n=5, A[] = {1,3,5,2,2}
+//          O/P: 3
+int equilibriumPoint(long long a[], int n){
+  long long sum = 0, currsum = 0;
+  for(int i =  0; i < n; i++){
+    sum += a[i];
+  }
+  
+  for(int i = 0; i<n; i++){
+    sum = sum - a[i];
+    if(currsum == sum)
+      return i+1;
+    currsum += a[i];
+  }
+  return -1;
+}
+
+
+
+// 89th
+// Amazon Interview Challenge: Array - Check Rotation
+// Given two strings a and b. Check if the string 'b' can be obtained by rotating another string 'a' by exactly 2 places.
+// Example: I/P: a="amazon", b = "azonam"
+//          O/P: 1
+// * amazon can be rotated anti-clockwise by two places, which will make it as azonam
+bool isRotated(string str1, string str2){
+  if(str1.size() != str2.size())
+    return false;
+  
+  int n = str1.size();
+  bool flag1 = true, flag2=true;
+  
+  for(int i=0; i<n; i++){
+    if(str1[i] != str2[(i+2)%n])
+      flag1 = false;
+    if(str1[i] != str2[(n-2+i)%n])
+      flag1 = false;
+  }
+  
+  return flag1 || flag2;
+}
+
+
+
+
 // 90th
-// Microsoft Interview Challenge: - Max Product Subarray
+// Microsoft Interview Challenge: Array - Max Product Subarray
+// Given an array arr[] that contains N integers. Find the product of the maximum product subarray.
+// Example: I/P: n=5, arr[] = {6,-3,-10,0,2}
+//          O/P: 180
+// * Subarray with maximum product is [6, -3, -10] which gives product as 180.
+long long maxProduct(vector<int> arr, int n) {
+  long long ans, maxm, minm;
+  ans = maxm = minm = arr[0];
+  
+  for(int i=1; i<n; i++){
+    long long curr = arr[i];
+    if(curr < 0)
+      swap(maxm, minm);
+    
+    maxm = max(curr, maxm * curr);
+    minm = min(curr, minm * curr);
+    
+    ans = max(ans, maxm);
+  }
+  return ans;
+}
+
 
 
 // 91st
@@ -150,13 +247,37 @@ int search(int arr[], int l, int h, int key){
 
 
 // 97th
-// LinkedIn Interview Challenge: Strings - 
-// Gİven a list of words followed by two words, find the minimum distance between the given two words.
+// LinkedIn Interview Challenge: Strings - Closest Strings
+// Given a list of words followed by two words, find the minimum distance between the given two words.
 // * Here distance is the difference in indices between the given words in the list of words.
 //  Example: I/P: s = {"the", "quick", "brown", "fox", "quick"}
 //                word1="the"   word2="fox"
 //           O/P: 3
-...
+int shortestDistance(vector<string> &s, string word1, string word2){
+  int word1_ind = -1, word2_ind = -1;
+  int ans = INT_MAX;
+  
+  for(int i = 0; i<s.size(); i++){
+    if(s[i] == word1)
+      word1_ind = i;
+    if(s[i] == word2)
+      word2_ind = i;
+    
+    if(word1_ind!=-1 and word2_ind!=-1)
+      ans=min(ans,abs(word1_ind-word2_ind));
+  }
+  return ans;
+}
+
+
+// 98th
+// Amazon Interview Challenge: Array - 
+// Given a sorted array arr containing n elements find indexes of first and last occurences of an element x in the given array
+// * The array may contain duplicate elements
+//  Example: I/P: n = 9, x=5
+//                arr[] = {1,3,5,5,5,5,67,123,125}
+//           O/P:  2 5
+....
   
   
   
