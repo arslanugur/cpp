@@ -1,3 +1,17 @@
+/*
+
+Data Types in C++ are Mainly Divided into 3 Types:
+  - Primary or Built-in data types: They can be used directly by the user to declare variables.
+        Integer, Character, Boolean, Floating Point, Double Floating Point, Void (Valueless), Wide Character
+        
+  - Derived data types: They are derived from the primitive or built-in datatypes are referred to as Derived Data Types.
+        Function, Array, Pointer, Reference
+        
+  - User-defined data types: They are defined by the user itself. Like, defining a class in C++ or a structure.
+        Class, Structure, Union, Enum, Typedef
+
+*/
+
 // control flow
 // 1
 if (conditional)
