@@ -49,4 +49,137 @@ Geliştirilen program üzerinde bir değişiklik olduğunda, bu değişikliği g
 
 
 
+# Statements - İfadeler
+Bir fikri başka kişiye iletmek istediğimizde, genellikle cümleler halinde yazar veya konuşuruz. 
+Tıpkı konuşma dilinde olduğu gibi, C++ programımıza bir şey yaptırmak istediğimizde ifadeleri kullanırız. 
+C++ dilinde tek bir ifade birçok makine dili talimatına denk gelebilir.
+1.Declaration statements - Tanımlama
+2.Jump statements 
+3.Expression statements
+4.Compound statements
+5.Selection statements
+6.Iteration statements
+7.Try blocks
+
+
+
+# Functions and the main function
+C++'da ifadeler tipik olarak fonksiyon adı verilen birimler halinde gruplandırılır. 
+Bir fonksiyon, sırayla (yukarıdan aşağıya doğru sırayla) yürütülen bir "ifadeler topluluğudur."
+Her C++ programinin main (tümü küçük harfler) adında özel bir işlevi olmalıdır. 
+Program çalıştırıldığında, main içindeki ifadeler sırayla yürütülür.
+
+Derleyici, main function - ifadelerin bulunduğu blok
+derleyici main function var mı diye arar. derleyici main functiona gider ve oradaki ifadeleri çalıştırır.
+
+#include <iostream>
+
+int main()
+{
+        std::cout << "Helo World";
+        return 0;
+}
+
+
+# Değişken
+1. İşlem yapılacak sayılar belleğe gönderilmeli.
+2. Yapılacak işlem, işlem merkezine gönderilmeli.
+3. Önceden belleğe yazılan sayılar bellekten olunur.
+   ve işlem merkezinde işlem görür.
+4. Çıkan sonuç belleğe yazılır ve sonrasında kullanılır.
+
+RAM - Bellek (Değişken değerleri (verileri) aklında tutar.)
+CPU - İşlemci (Bellekten değerleri okur.)
+
+
+CPP'da doğrudan belleğe erişme izni verilmez.
+Bellekte adres ve değer kısmı vardır. 
+
+
+Tüm bilgisayarlarda, programlarınızın kullanabileceği RAM (rastgele erişim belleğinin kısaltması) adı verilen bir parça bulunur. 
+RAM'i, program çalışırken her biri bir veri parçasını tutmak için kullanılabilen bir dizi numaralı posta kutusu olarak düşünebilirsiniz. 
+Bellekte bir yerde saklanan tek bir veri parçasına "değer" denir.
+C++'da doğrudan belleğe erişime izin verilmez. 
+Bunun yerine, bir nesne aracılığıyla dolaylı olarak belleğe erişiriz.
+Buradaki kilit nokta, git 7532 numaralı posta kutusunda depolanan değeri al demek yerine, 
+                      git bu nesnenin depoladığı değeri al diyebiliriz. 
+Bu, değerleri depolamak ve almak için nesneleri kullanmaya odaklanabileceğimiz ve
+bellekte gerçekte nereye yerleştirildikleri konusunda endişelenmemize gerek olmadığı anlamına gelir.
+Nesneler isimlendirilmiş veya isimsiz (anonim) olabilir. 
+Adlandırılmış nesneye "değişken" denir ve nesnenin adına "tanımlayıcı" denir. 
+Programlarımızda yarattığımız ve kullandığımız nesnelerin çoğu değişken olacaktır.
+
+        # Temsili RAM Yapısı
+
+        Adres        Değer                Adres: 30 daireli bir apartmanda kapı numaraları olmalı. bunlara da değişken diyoruz.
+        ------------------
+        0                x
+        1                x
+        2                x
+        3                x
+        59743            x
+        544926           x
+        995321           2
+        9232732          4
+        9248572          9
+        4722011          5
+
+        1. Bir hafıza hücresine veri yerleştirebilmek için adresini bilmeniz gerekiyor.
+        2. Hafıza adresleri karışık sayılardan oluşur ve bunları aklınızda tutmanız ve yönetmeniz çok zordur.
+        3. Bu yüzden RAM üzerinde işlem yapmak için değişkenleri kullanıyoruz.
+
+
+        int Sayı;        (Değişken türü        Değişken Adı)
+
+
+Değişken Adı Olarak Kullanılamaz
+C++ Anahtar Kelimeler
+Aşağıdaki liste, C++ 'da ayrılmış sözcükleri gösterir. 
+Bu ayrılmış sözcükler, sabit ya da değişken ya da başka herhangi bir tanımlayıcı isim olarak kullanılamaz.
+asm         else         new                 this
+auto         enum         operator         throw
+bool         explicit         private         true
+break         export         protected         try
+case          extern        public         typedef
+catch         false         register         typeid
+char         float         reinterpret_cast         typename
+class         for         return                 union
+const         friend         short                 unsigned
+const_cast         goto         signed                 using
+continue         if         sizeof            virtual
+default         inline         static         void
+delete         int         static_cast         volatile
+do         long                 struct         wchar_t
+double         mutable         switch         while
+dynamic_cast         namespace         template
+
+küçük ve büyük harfe duyarlıdır.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
