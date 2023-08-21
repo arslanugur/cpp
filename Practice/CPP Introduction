@@ -1,0 +1,52 @@
+01. Programlama Terminolojisi                   01. Sınıf (Class)                                         01. Önişlemci (Preprocessors)
+02. C++ Nedir ?                                 02. Sınıf Fonksiyonlan (Class Functions)                  02. Başlık Dosyası (Header File)
+03. Algoritma                                   03. Sınıf Yapıcı ve Yıkıcı (Constructors Destructors)     03. İleriye Dönük Tanımlama
+04. Programlamaya Giriş                         04. Sınıf Statik Elemanlar (Static Members)               04. Satır içi Fonksiyon
+05. Değişkenler                                 05. Sınıf Miras/Kalıtım (Inheritance)                     05. Şablon (Template)
+06. Değişken ve RAM                             06. Erişim Kontrolü (Access Control)                      06. Bellek Tahsisi (Stack-Heap)
+07. Değişken ve İşaretçi                        07. Kapsülleme (Encapsulation)                            07. İstisnalar
+08. Temel Veri Türleri                          08. Polimorfizm (Polymorphism)                            08. Faydalı Kütüphaneler
+09. Aritmetik Operatörler                       09. Arayüz(Interface)                                     09. Ömek Uygulama
+10. Diziler                                     10. Soyut (Abstract)                                      10. Kapanış
+11. Akış Kontrolleri (If, For,While, Switch)    11. Aşın Yükleme
+12. Kapsam (Scope)                              12. Dönüşüm (Casting)
+13. Fonksiyonlar                                13. This Parametresi
+14. Fonksiyon ve İşaretçi                       14. Sanal Metod (Virtual Method)
+15. Fonksiyon Değer İle Geçiş                   15. Ezme (Override)
+16. Fonksiyon İşaretçi İle Geçiş
+17. Fonksiyon Referans ile Geçiş
+18. Geri Çağırma Fonksiyonu (Call Back Function)
+
+
+# Terminology
+
+--> Derleyici - Compiler
+1. Herhangi bir dilde yazılmış olan kodu istenilen başka bir kod haline dönüştüren programdır.
+2. Diğer bir tanım ise daha üst seviye bir dilden daha alt seviyeli bir dile tercüme olarak kabul edilebilir.
+3. Derleyiciler bu kod üretim sırasında, üretilen kodun en verimli şekilde üretilmesi için kod iyileştirmesi (optimizasyon) da yapabilir.
+4. Aynı zamanda kaynak kod içinde (source code) bulunan hataların yakalanması ve bu hataların programcıya bildirilmesi de derleyicilerin diğer görevlerinden birisidir.
+5. Derleyiciler günümüzde daha çok, bir dilde yazılmış olan koddan, işletim sistemi ve donanım uyumlu kodların üretilmesinde kullanılmaktadır.
+
+        Visual C++ (cl), Intel C++ Compiler (icc),GCC (g++)
+
+--> Bağlayıcı - Linker
+Derleyici tarafından nesne (.obj) dosyasına çevrilen bir veya birden çok dosyanın birbirleri ile ilişkilendirmesi 
+  ve işletim sisteminin rahatça çalıştırabileceği tek bir çalıştırılabilir dosyaya çevrilmesini sağlayan programdir.
+  Dosya çağırma gibi.
+
+
+--> Versiyonlama
+Geliştirilen program üzerinde bir değişiklik olduğunda, bu değişikliği gösteren sayısal ifadeler.
+Örn: 1.0.5 şeklindedir. Bunu xyz olarak düşünebilirsiniz.
+1. Önceki sürümle uyumsuz değişiklikler yaptığınızda x hanesini değiştirmelisiniz.
+2. Önceki sürümle uyumlu değişiklikler yaptığınızda y hanesini değiştirmelisiniz.
+3. Önceki sürümle uyumlu bir hata düzeltmesi yaptığınızda z hanesini değiştirmelisiniz.
+
+  Son hane yani z hanesi yama (hata düzeltme) hanesidir.
+
+
+
+
+
+
+
